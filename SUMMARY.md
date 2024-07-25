@@ -1,8 +1,9 @@
-# Summary
+# Table of contents
 
 * [Introduction](README.md)
 * [Authentication](authentication.md)
 * [API Endpoints](payment/README.md)
-    * [Endpoint 1](payment/manual_api.md)
+  * [Endpoint 1](payment/manual\_api.md)
 * [Error Codes](error-codes.md)
 * [Examples](examples.md)
+* [Manual Integration API (Open API)](manual-integration-api-open-api.md)
