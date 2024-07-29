@@ -6,8 +6,6 @@ description: testing page from gitbook edit
 
 If you have develop your own shopping cart and need manual integration by yourself, here are the details.
 
-&#x20;
-
 **1. Info required(test)**
 
 To start we will need the information as below. These can be retrieve in senangPay Dashboard.
@@ -18,9 +16,7 @@ To start we will need the information as below. These can be retrieve in senangP
 
 1.3 Then you will need to fill in the return URL. This is the URL where senangPay will redirect the buyer after the payment has been processed.
 
-1.4 Next, you need to fill the Callback URL. Callback URL is used as alternative notification to merchant shopping cart in case there is a breakdown in transaction flow. For more info on Callback URL, read [here ](https://guide.senangpay.my/callback-url/)
-
-&#x20;
+1.4 Next, you need to fill the Callback URL. Callback URL is used as alternative notification to merchant shopping cart in case there is a breakdown in transaction flow. For more info on Callback URL, read [here](https://guide.senangpay.my/callback-url/)
 
 **2. What parameters to send to senangPay**
 
@@ -36,4 +32,20 @@ Below are the details of the elements in the table :
 | email     | This is the email to populate in the payment form so that customer do not have to key in their email. This is optional and not have to be part of the hash. Customer is able to overwrite the value in payment form.                                                    |
 | phone     | This is the phone to populate in the payment form so that customer do not have to key in their phone. This is optional and not have to be part of the hash. Customer is able to overwrite the value in payment form.                                                    |
 
-&#x20;
+
+
+{% swagger src=".gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml" path="/pet" method="put" %}
+[Gardens-PET_TEST-1.0.0-resolved.yaml](.gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml" path="/pet" method="post" %}
+[Gardens-PET_TEST-1.0.0-resolved.yaml](.gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml" path="/pet/{petId}" method="get" %}
+[Gardens-PET_TEST-1.0.0-resolved.yaml](.gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml" path="/store/inventory" method="get" %}
+[Gardens-PET_TEST-1.0.0-resolved.yaml](.gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml)
+{% endswagger %}
