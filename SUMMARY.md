@@ -6,6 +6,7 @@
   * [Endpoint 1](payment/manual\_api.md)
 * [Error Codes](error-codes.md)
 * [Examples](examples.md)
-* [Manual Integration API (Open API)](manual-integration-api-open-api.md)
+* [Integration API](manual-integration-api-open-api/README.md)
+  * [Manual Integration API (Open API)](manual-integration-api-open-api/manual-integration-api-open-api.md)
 * [testtest](testtest/README.md)
   * [test111](testtest/test111.md)
