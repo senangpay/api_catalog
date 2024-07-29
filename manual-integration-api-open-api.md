@@ -8,7 +8,7 @@ If you have develop your own shopping cart and need manual integration by yourse
 
 &#x20;
 
-**1. Info required**
+**1. Info required(test)**
 
 To start we will need the information as below. These can be retrieve in senangPay Dashboard.
 
