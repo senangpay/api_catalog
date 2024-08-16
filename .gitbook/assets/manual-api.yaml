@@ -1,0 +1,169 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Manual API
+  description: Manual API integration
+  
+servers:
+  - url: 'https://c1-api.senangpay.my'
+  
+paths:
+  /payment:
+    get:
+      tags: 
+       - payment
+      summary: The payment details
+      operationId: getPayment
+      parameters:
+        - name: bodyLimit
+          in: query
+          description: The payment details
+          schema:
+            type: integer
+            minimum: 10
+            maximum: 20
+            example: 15
+            
+        - name: pageLimit
+          in: query
+          description: The pages to return payment details
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 5
+            example: 3
+      
+      responses:
+        200:
+          description: Successful pull payment information
+          content:
+            application/jason:
+              schema:
+                $ref: '#/components/schemas/Payment'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Payment'
+                      
+    post:
+      tags:
+        - payment
+      summary: creates a new payment
+      operationId: addPayment
+      requestBody:
+        required: true
+        content: 
+          application/jason:
+            schema:
+              $ref: '#/components/schemas/Payment'
+
+      parameters:
+        $ref: '#/components/schemas/Payment'
+                  
+      responses:
+        200:
+          description: Successfully created a new payment
+          content:
+          application/jason:
+            schema:
+              type: array
+              items:
+               $ref: '#/components/schemas/Cart'
+          application/xml:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Cart'
+          
+  /cart:
+   get:
+    tags:
+      - cart
+    summary: Shopping cart detail
+    
+    responses:
+      200:
+        description: Successful pull payment information
+        content:
+          application/jason:
+            schema:
+              type: array
+              items:
+               $ref: '#/components/schemas/Cart'
+          application/xml:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Cart'
+                    
+components:
+  schemas:
+  
+    Payment:
+      description: Model containing payment info
+      properties:
+          detail:
+            type: string
+            example: Shopping cart id 30
+            
+          amount:
+            type: integer
+            example: 25.50
+            
+          order id:
+            type: string
+            example: 3432D4
+            
+          hash:
+            type: string
+            example: SHA 456
+            
+          name:
+            type: string
+            example: Amir
+            
+          email:
+            type: string
+            example: amir@email.cm
+            
+          phone:
+            type: integer
+            example: 0123456789
+          
+          timeout:
+            type: integer
+            example: 450
+            
+    Cart:
+      description: Array of shopping cart info
+      properties:
+          status id:
+            type: integer
+            example: 1
+            
+          order id:
+            type: integer
+            example: 45
+            
+          msg:
+            type: string
+            example: Payment was successful
+            
+          transaction id:
+            type: integer
+            example: 14363538840
+            
+          hash:
+            type: string
+            example: SHA678
+            
+  requestBodies:
+    Payment:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Payment'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/Payment'
+      description: Payment add to
+      required: true
