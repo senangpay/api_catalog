@@ -4,11 +4,10 @@
 
 Ready to dive into seamless payments? Let’s get your business account set up in no time:
 
-1. Head over to the senangPay Registration page.
+1. Head over to the senangPay Registration page -> [Sign up here ](https://senangpay.my/registration-guide/)
 2. Fill in the blanks—your name, business name, email, phone number, and a rock-solid password.
-3. Give the Terms and Conditions a quick nod and hit that submit button.
-4. Keep an eye on your inbox for an OTP and pop it in to verify your account.
-5. You’re all set! Your business account is live. Now, let's move on to activating it—check out the next guide.
+3. Give the Terms and Agreement a quick nod and make a payment.
+4. You’re all set! Your business account is live. Now, let's move on to activating it—check out the next guide.
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-08-20 at 1.00.52 PM.png" alt=""><figcaption></figcaption></figure>
 

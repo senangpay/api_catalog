@@ -3,7 +3,12 @@ description: >-
   Welcome to the senangPay API reference documentation, your comprehensive guide
   to seamlessly integrate our Payment Gateway, Recurring and other services into
   your applications.
+cover: .gitbook/assets/senangpay.png
+coverY: 0
 layout:
+  cover:
+    visible: true
+    size: full
   title:
     visible: true
   description:
@@ -32,29 +37,23 @@ Our platform integrates seamlessly with various systems including e-commerce pla
 
 ## For Developers <a href="#ready-to-transform-the-way-you-transact-lets-make-it-happen-with-dokus-api" id="ready-to-transform-the-way-you-transact-lets-make-it-happen-with-dokus-api"></a>
 
-
-
 <table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>Set up your development integration </td><td>Familiarize with the API Documentation</td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
 
 
 
+## **Tips for Developers:**
 
+{% hint style="info" %}
+**Familiarize with the API Documentation -** Start by thoroughly reviewing the API documentation. Understanding the available endpoints, authentication methods, and response formats will streamline your integration process.
+{% endhint %}
 
-***
+{% hint style="info" %}
+**Use Sandbox mode for testing -** Leverage the sandbox environment to test your integration without affecting live transactions. This ensures your implementation is stable before going live.
+{% endhint %}
 
-## Start using senangPay
-
-<figure><img src=".gitbook/assets/senangpay.png" alt="" width="375"><figcaption></figcaption></figure>
-
-Set up a senangPay account, migrate your customer data, and learn how to immediately protect yourself from fraud.
-
-[Activate your account ->](https://senangpay.my/register/)
-
-OR&#x20;
-
-Test, you can get the sandbox account&#x20;
-
-[Register sandbox -> ](https://senangpay.my/register\_sandbox/)
+{% hint style="info" %}
+**Engage with Developer Community -** Join the senangPay developer community to share insights, solve challenges, and stay informed about best practices and new developments.
+{% endhint %}
 
 
 
