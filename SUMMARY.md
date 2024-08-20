@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [Getting started with senangPay API](README.md)
+  * [User Registration](readme/user-registration.md)
 * [Authentication](authentication.md)
 * [API Endpoints](payment/README.md)
   * [Endpoint 1](payment/manual\_api.md)

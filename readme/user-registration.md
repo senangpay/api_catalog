@@ -1,0 +1,30 @@
+# User Registration
+
+## Create a senangPay merchant account with us!
+
+Ready to dive into seamless payments? Let’s get your business account set up in no time:
+
+1. Head over to the senangPay Registration page.
+2. Fill in the blanks—your name, business name, email, phone number, and a rock-solid password.
+3. Give the Terms and Conditions a quick nod and hit that submit button.
+4. Keep an eye on your inbox for an OTP and pop it in to verify your account.
+5. You’re all set! Your business account is live. Now, let's move on to activating it—check out the next guide.
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-08-20 at 1.00.52 PM.png" alt=""><figcaption></figcaption></figure>
+
+If you are looking to explore and test our products, you can register for sandbox account below.
+
+
+
+## Set Up a senangPay Sandbox Account
+
+While your senangPay Business Account handles real transactions in the live environment, the Sandbox Account is your playground for testing payments in a safe, simulated environment. Here’s how to create your senangPay Sandbox Account:
+
+1. Visit the senangPay Sandbox Registration page, here.
+2. Fill out the form with your full name, business name, email address, and choose a password.
+3. **Step 3:** Agree to the Terms and Conditions and Privacy Policy, then submit the form.
+4. **Step 4:** Your senangPay Sandbox Account is now set up. Log in using the credentials you provided to start testing.
+
+
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-08-20 at 1.42.29 PM.png" alt=""><figcaption></figcaption></figure>
