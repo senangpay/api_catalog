@@ -11,3 +11,4 @@
   * [Manual Integration API (Open API)](manual-integration-api-open-api/manual-integration-api-open-api.md)
 * [Integration](testtest/README.md)
   * [API for Recurring Payment](testtest/test111.md)
+* [Tokenization API](tokenization-api.md)
