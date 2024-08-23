@@ -41,8 +41,6 @@ Our platform integrates seamlessly with various systems including e-commerce pla
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Use senangPay without code</strong></td><td>Start accepting payments with senangPay by creating a payment link or sending an invoice.</td><td></td></tr><tr><td><strong>Payment form</strong></td><td>Create a payment form by adding your products, and embedding it into your website.</td><td></td></tr><tr><td><strong>Create and manage recurring payments</strong></td><td>Build a full, working recurring payments integration.</td><td></td></tr></tbody></table>
 
-## &#x20;<a href="#ready-to-transform-the-way-you-transact-lets-make-it-happen-with-dokus-api" id="ready-to-transform-the-way-you-transact-lets-make-it-happen-with-dokus-api"></a>
-
 ## For developers <a href="#ready-to-transform-the-way-you-transact-lets-make-it-happen-with-dokus-api" id="ready-to-transform-the-way-you-transact-lets-make-it-happen-with-dokus-api"></a>
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Set up your development integration</strong> </td><td>Familiarize with the API Documentation</td><td><mark style="color:blue;">-></mark></td></tr><tr><td><strong>Integration Guide: From Code to Checkout</strong></td><td>Ensure a smooth integration from start to finish.</td><td><mark style="color:blue;">-></mark></td></tr></tbody></table>
