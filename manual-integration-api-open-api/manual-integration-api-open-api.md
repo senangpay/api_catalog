@@ -34,18 +34,14 @@ Below are the details of the elements in the table :
 
 
 
-{% swagger src="../.gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml" path="/pet" method="put" %}
-[Gardens-PET_TEST-1.0.0-resolved.yaml](../.gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml)
+{% swagger src="../.gitbook/assets/swagger phase 1.yaml" path="/payment/{merchantID}" method="post" %}
+[swagger phase 1.yaml](<../.gitbook/assets/swagger phase 1.yaml>)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml" path="/pet" method="post" %}
-[Gardens-PET_TEST-1.0.0-resolved.yaml](../.gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml)
+{% swagger src="../.gitbook/assets/swagger phase 1.yaml" path="/payment/return" method="get" %}
+[swagger phase 1.yaml](<../.gitbook/assets/swagger phase 1.yaml>)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml" path="/pet/{petId}" method="get" %}
-[Gardens-PET_TEST-1.0.0-resolved.yaml](../.gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml)
-{% endswagger %}
-
-{% swagger src="../.gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml" path="/store/inventory" method="get" %}
-[Gardens-PET_TEST-1.0.0-resolved.yaml](../.gitbook/assets/Gardens-PET_TEST-1.0.0-resolved.yaml)
+{% swagger src="../.gitbook/assets/swagger phase 1.yaml" path="/payment/callback" method="post" %}
+[swagger phase 1.yaml](<../.gitbook/assets/swagger phase 1.yaml>)
 {% endswagger %}
