@@ -40,8 +40,6 @@ Below are the details of the elements in the table:
 
 
 
-&#x20;**------ SWAGGER HUB CODE ------**
-
 
 
 {% swagger src="../.gitbook/assets/manual-api.yaml" path="/payment" method="get" %}
