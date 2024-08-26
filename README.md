@@ -3,7 +3,7 @@ description: >-
   Welcome to the senangPay API reference documentation, your comprehensive guide
   to seamlessly integrate our Payment Gateway, Recurring and other services into
   your applications.
-cover: .gitbook/assets/sp_logo-12.png
+cover: .gitbook/assets/senangPay_Logo-04 (1).png
 coverY: 0
 layout:
   cover:
