@@ -27,7 +27,7 @@ Utilize the senangPay API for custom integrations and extended functionalities, 
 
 
 
-## Unlock the Power of Seamless Transactions with senangPay API: Your Gateway to Smarter Commerce  <a href="#unlock-the-power-of-seamless-transactions-with-doku-api-your-gateway-to-smarter-commerce" id="unlock-the-power-of-seamless-transactions-with-doku-api-your-gateway-to-smarter-commerce"></a>
+## Unlock the power of seamless transactions with senangPay API: Your gateway to smarter commerce  <a href="#unlock-the-power-of-seamless-transactions-with-doku-api-your-gateway-to-smarter-commerce" id="unlock-the-power-of-seamless-transactions-with-doku-api-your-gateway-to-smarter-commerce"></a>
 
 Our platform integrates seamlessly with various systems including e-commerce platforms like WooCommerce accounting software, and CRM applications to enhance your operational efficiency.
 
@@ -39,11 +39,11 @@ Our platform integrates seamlessly with various systems including e-commerce pla
 
 
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Use senangPay without code</strong></td><td>Start accepting payments with senangPay by creating a payment link or sending an invoice.</td><td></td></tr><tr><td><strong>Payment form</strong></td><td>Create a payment form by adding your products, and embedding it into your website.</td><td></td></tr><tr><td><strong>Create and manage recurring payments</strong></td><td>Build a full, working recurring payments integration.</td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Use senangPay without code</strong></td><td>Start accepting payments with senangPay by creating a payment link or sending an invoice.</td><td><a href="https://guide.senangpay.my/universal-payment-form/">-></a></td></tr><tr><td><strong>Payment form</strong></td><td>Create a payment form by adding your products, and embedding it into your website.</td><td><a href="https://senangpay.my/payment-form/">-></a></td></tr><tr><td><strong>Create and manage recurring payments</strong></td><td>Build a full, working recurring payments integration.</td><td><a href="https://guide.senangpay.my/enable-recurring-billing-day/">-></a></td></tr></tbody></table>
 
 ## For developers <a href="#ready-to-transform-the-way-you-transact-lets-make-it-happen-with-dokus-api" id="ready-to-transform-the-way-you-transact-lets-make-it-happen-with-dokus-api"></a>
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Set up your development integration</strong> </td><td>Familiarize with the API Documentation</td><td><mark style="color:blue;">-></mark></td></tr><tr><td><strong>Integration Guide: From Code to Checkout</strong></td><td>Ensure a smooth integration from start to finish.</td><td><mark style="color:blue;">-></mark></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Set up your development integration</strong> </td><td>Familiarize with the API Documentation</td><td><a href="manual-integration-api-open-api/manual-integration-api-open-api.md"><mark style="color:blue;">-></mark></a></td></tr><tr><td><strong>Integration Guide: From Code to Checkout</strong></td><td>Ensure a smooth integration from start to finish.</td><td><a href="manual-integration-api-open-api/test111.md"><mark style="color:blue;">-></mark></a></td></tr></tbody></table>
 
 
 
