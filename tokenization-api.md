@@ -1,3 +1,7 @@
+---
+icon: key
+---
+
 # Tokenization API
 
 Allows merchant to charge customer’s credit card without the need to enter the credit card details (name, card number, expiry and cvv). To get this feature in your dashboard, you can notify us by sending a ticket from the dashboard or guide page. This application shall be subjected to senangPay approval which we will review at our own discretion. Merchant must provide us the **Terms of Contract** between merchant and the other party user.

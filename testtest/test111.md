@@ -1,3 +1,7 @@
+---
+icon: lock-a
+---
+
 # API for Recurring Payment
 
 If you have your own system and wish to integrate it to senangPay for recurring payments you will need to first add your product into senangPay. The product needs to be created first for auditing purposes. Recurring payments is not available for merchants who subscribe with senangPay x Stripe Package.
