@@ -4,16 +4,24 @@ icon: money-check
 
 # Manual Integration API (Open API)
 
-If you have develop your own shopping cart and need manual integration by yourself, here are the details.
+If you've created your own e-commerce site and require manual integration, here are the details.
 
 ## **Info required**&#x20;
 
-To start we will need the information as below. These can be retrieve in senangPay Dashboard.
+To get started, please gather the following details from your senangPay Dashboard:
 
-1. Go to Menu > Settings > Profile
-2. Refer to **Shopping Cart Integration Link** section. Get your **Merchant ID** and **Secret Key** information.
-3. Then you will need to fill in the return URL. This is the URL where senangPay will redirect the buyer after the payment has been processed.
-4. &#x20;need to fill the Callback URL. Callback URL is used as alternative notification to merchant shopping cart in case there is a breakdown in transaction flow. For more info on Callback URL, read [here](https://guide.senangpay.my/callback-url/)
+Go to **Menu** > **Settings** > **Profile**
+
+1. **Merchant ID and Secret Key :** Find these in the **Shopping Cart Integration Link** section.
+2. **Return URL** : Specify the Return URL where senangPay will redirect buyers after payment processing.
+3. **Callback URL :**&#x20;
+
+* Provide the Callback URL, which serves as an alternative notification method if there is an issue with the transaction flow.
+* For more information on the Callback URL, please \[read here]\(#).
+
+&#x20;
+
+Ensure you have these details ready to facilitate a smooth integration process.
 
 
 
