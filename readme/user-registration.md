@@ -4,10 +4,13 @@
 
 Ready to dive into seamless payments? Let’s get your business account set up in no time:
 
-1. Head over to the senangPay Registration page -> [Sign up here ](https://senangpay.my/registration-guide/)
-2. Fill in the blanks—your name, business name, email, phone number, and a rock-solid password.
-3. Give the Terms and Agreement a quick nod and make a payment.
-4. You’re all set! Your business account is live. Now, let's move on to activating it—check out the next guide.
+1.Head over to the senangPay Registration page -> [Sign up here ](https://senangpay.my/registration-guide/)
+
+2.Fill in the blanks—your name, business name, email, phone number, and a rock-solid password.
+
+3.Give the Terms and Agreement a quick nod and make a payment.
+
+4.You’re all set! Your business account is live. Now, let's move on to activating it—check out the next guide.
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-08-20 at 1.00.52 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -25,6 +28,8 @@ While your senangPay Business Account handles real transactions in the live envi
 4. On the payment page, select FPX and choose Maybank at the Payment Detail section.
 
 You can use the test credit card below to make payments at our sandbox. Other credit cards will result in a failed credit card transaction.
+
+
 
 | Number       | 5111111111111118 |
 | ------------ | ---------------- |
