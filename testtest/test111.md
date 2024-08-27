@@ -1,5 +1,5 @@
 ---
-icon: lock-a
+icon: arrows-repeat
 ---
 
 # API for Recurring Payment
