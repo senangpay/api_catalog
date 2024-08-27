@@ -68,6 +68,18 @@ We have developed a new secure way of generating token for our tokenization paym
 
 
 
+{% swagger src=".gitbook/assets/swagger phase 1.yaml" path="/apiv1/pay_cc" method="post" %}
+[swagger phase 1.yaml](<.gitbook/assets/swagger phase 1.yaml>)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/swagger phase 1.yaml" path="/apiv1/pay_cc/return" method="get" %}
+[swagger phase 1.yaml](<.gitbook/assets/swagger phase 1.yaml>)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/swagger phase 1.yaml" path="/apiv1/pay_cc/callback" method="post" %}
+[swagger phase 1.yaml](<.gitbook/assets/swagger phase 1.yaml>)
+{% endswagger %}
+
 ### **2.0 Enable/disable credit card**
 
 | **Item**                | **Detail**                                           |
@@ -103,6 +115,10 @@ We have developed a new secure way of generating token for our tokenization paym
 
 
 
+
+{% swagger src=".gitbook/assets/swagger phase 1.yaml" path="/apiv1/update_token_status" method="get" %}
+[swagger phase 1.yaml](<.gitbook/assets/swagger phase 1.yaml>)
+{% endswagger %}
 
 ### **3.0 Validate payment token**
 
