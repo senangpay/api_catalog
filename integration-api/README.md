@@ -10,10 +10,10 @@ At Senangpay, we offer several types of integration APIs. For more details, plea
 [manual-integration-api-open-api.md](manual-integration-api-open-api.md)
 {% endcontent-ref %}
 
-{% content-ref url="../testtest/test111.md" %}
-[test111.md](../testtest/test111.md)
+{% content-ref url="api-for-recurring-payment.md" %}
+[api-for-recurring-payment.md](api-for-recurring-payment.md)
 {% endcontent-ref %}
 
-{% content-ref url="../tokenization-api.md" %}
-[tokenization-api.md](../tokenization-api.md)
+{% content-ref url="tokenization-api.md" %}
+[tokenization-api.md](tokenization-api.md)
 {% endcontent-ref %}
