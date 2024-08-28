@@ -16,13 +16,11 @@ If senangPay is unable to process this charge, it indicates that the card is inv
 
 
 
-
+***
 
 {% content-ref url="3d-get-token.md" %}
 [3d-get-token.md](3d-get-token.md)
 {% endcontent-ref %}
-
-
 
 {% content-ref url="api-list.md" %}
 [api-list.md](api-list.md)
