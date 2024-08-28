@@ -6,18 +6,22 @@ icon: money-check
 
 If you've created your own e-commerce site and require manual integration, here are the details.
 
-## **Info required**&#x20;
+## **Information required**&#x20;
 
 To get started, please gather the following details from your senangPay Dashboard:
 
 Go to **Menu** > **Settings** > **Profile**
 
-1. **Merchant ID and Secret Key :** Find these in the **Shopping Cart Integration Link** section.
-2. **Return URL** : Specify the Return URL where senangPay will redirect buyers after payment processing.
-3. **Callback URL :**&#x20;
+1\. **Merchant ID and Secret Key :** Find these in the **Shopping Cart Integration Link** section.
+
+2\. **Return URL** : Specify the Return URL where senangPay will redirect buyers after payment   processing.
+
+3\. **Callback URL :**&#x20;
 
 * Provide the Callback URL, which serves as an alternative notification method if there is an issue with the transaction flow.
-* For more information on the Callback URL, please \[read here]\(#).
+* For more information on the Callback URL, please [read here ->](https://guide.senangpay.my/callback-url/)
+
+
 
 &#x20;
 
