@@ -10,10 +10,13 @@ If you have your own system and wish to integrate it to senangPay for recurring 
 
 To start, we will need the information as below. These can be retrieved from the senangPay Dashboard.
 
-1. Go to Menu > Settings > Profile
-2. Refer to the Shopping Cart Integration Link section. Get your Merchant ID and Secret Key information.
-3. Then you will need to fill in the **Recurring Return URL**. This is the URL where senangPay will redirect the buyer to after the payment has been processed.
-4. Next, you need to fill in the Recurring Callback URL. Recurring Callback URL is used as an alternative notification to the merchant shopping cart in case here is a breakdown in the transaction flow. For more info on Callback URL, read [here](https://guide.senangpay.my/callback-url/).
+1\. Go to Menu > Settings > Profile&#x20;
+
+2\. Refer to the Shopping Cart Integration Link section. Get your Merchant ID and Secret Key information.
+
+3\. Then  you will need to fill in the **Recurring Return URL**. This is the URL where senangPay will redirect the buyer to after the payment has been processed.
+
+4\. Next, you need to fill in the Recurring Callback URL. Recurring Callback URL is used as an alternative notification to the merchant shopping cart in case here is a breakdown in the transaction flow. For more info on Callback URL, read [here](https://guide.senangpay.my/callback-url/).
 
 
 
@@ -36,7 +39,7 @@ Recurring id is the unique id that identifies your recurring product. To obtain 
 
 Below are the details of the elements in the table:
 
-<table><thead><tr><th width="181">Item</th><th>Detail</th></tr></thead><tbody><tr><td><code>order_id</code></td><td><p>Identifies the shopping cart when redirecting after payment. Max 100 characters. </p><ul><li>Allowed: A-Z, a-z, 0-9, and dash ( - )</li><li>Example: 3432D4.</li></ul></td></tr><tr><td><code>recurring_id</code></td><td>Identifies which recurring product/item senangPay processes.</td></tr><tr><td><code>hash</code></td><td>Ensures data integrity between the merchant’s cart and senangPay. Refer to the ‘How to generate the secure hash’ section for details.</td></tr><tr><td><code>name</code></td><td>Adds the customer's name automatically. It's optional and can be edited.</td></tr><tr><td><code>email</code></td><td>Populates the customer's email for them. Optional and can be modified.</td></tr><tr><td><code>phone</code></td><td>Inserts the customer's phone number. Optional and adjustable by the customer.</td></tr></tbody></table>
+<table><thead><tr><th width="148">Item</th><th>Detail</th></tr></thead><tbody><tr><td><code>order_id</code></td><td><p>Identifies the shopping cart when redirecting after payment. Max 100 characters. </p><ul><li>Allowed: A-Z, a-z, 0-9, and dash ( - )</li><li>Example: 3432D4.</li></ul></td></tr><tr><td><code>recurring_id</code></td><td>Identifies which recurring product/item senangPay processes.</td></tr><tr><td><code>hash</code></td><td>Ensures data integrity between the merchant’s cart and senangPay. Refer to the ‘How to generate the secure hash’ section for details.</td></tr><tr><td><code>name</code></td><td>Adds the customer's name automatically. It's optional and can be edited.</td></tr><tr><td><code>email</code></td><td>Populates the customer's email for them. Optional and can be modified.</td></tr><tr><td><code>phone</code></td><td>Inserts the customer's phone number. Optional and adjustable by the customer.</td></tr></tbody></table>
 
 
 
