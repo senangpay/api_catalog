@@ -58,6 +58,8 @@ Additionally, we've implemented several extra security measures to ensure that o
 [swagger phase 1_v3.yaml](<../../.gitbook/assets/swagger phase 1_v3.yaml>)
 {% endswagger %}
 
+###
+
 ### **2.0 Enable/disable credit card**
 
 | **Item**                | **Detail**                                           |
@@ -95,6 +97,8 @@ Additionally, we've implemented several extra security measures to ensure that o
 {% swagger src="../../.gitbook/assets/swagger phase 1_v3.yaml" path="/apiv1/update_token_status" method="post" %}
 [swagger phase 1_v3.yaml](<../../.gitbook/assets/swagger phase 1_v3.yaml>)
 {% endswagger %}
+
+###
 
 ### **3.0 Validate payment token**
 

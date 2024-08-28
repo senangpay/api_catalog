@@ -76,6 +76,12 @@ $hash = hash_hmac('sha256', $string_to_hash, $secret_key);
 
 &#x20;
 
+{% swagger src="../../.gitbook/assets/swagger phase 1_v3.yaml" path="/tokenization" method="get" %}
+[swagger phase 1_v3.yaml](<../../.gitbook/assets/swagger phase 1_v3.yaml>)
+{% endswagger %}
+
+
+
 **4. Callback**
 
 The callback URL is used as an alternative notification to merchant backend in case there is a breakdown in transaction flow. This is optional so you can opt not to use this feature. However, this feature is recommended to ensure data integrity between a merchant’s system and senangPay.
