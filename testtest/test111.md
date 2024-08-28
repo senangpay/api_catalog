@@ -33,8 +33,8 @@ Here’s a step-by-step guide:
 2\. **Set Up the Recurring Product**:
 
 * Choose to create either an **Instalment Product** or a **Subscription Product**. For detailed instructions on setting up these products, refer to the following guides:
-  * Instalment Product Creation
-  * Subscription Product Creation
+  * [Instalment Product Creation](https://guide.senangpay.my/recurring-payment-instalment/)
+  * [Subscription Product Creation](https://guide.senangpay.my/recurring-payment-subscription/)
 
 3\. **Find the Recurring ID**:
 
