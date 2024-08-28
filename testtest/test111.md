@@ -22,16 +22,27 @@ To start, we will need the information as below. These can be retrieved from the
 
 ## **Getting the Recurring ID**
 
-Recurring id is the unique id that identifies your recurring product. To obtain the recurring id, you must first create a recurring product in senangPay dashboard.
+The Recurring ID is a unique identifier for your recurring product. To obtain it, you'll need to first create a recurring product in the senangPay dashboard.
 
-1\. Go to Menu >Product > Create New
+Here’s a step-by-step guide:
 
-2\. Creating a recurring product. You can learn more on how to create a recurring product here at these links.
+1\. **Create a New Product**
 
-* &#x20;[Instalment Product](https://guide.senangpay.my/recurring-payment-instalment/)
-* &#x20;[Subscription Product](https://guide.senangpay.my/recurring-payment-subscription/)
+* Navigate to **Menu > Product > Create New** in your senangPay dashboard.
 
-3\. Once the recurring product has been created, view the product details page, scroll down to **Payment Frequency Setting** section. The **Recurring Id** is located under Recurring Type.
+2\. **Set Up the Recurring Product**:
+
+* Choose to create either an **Instalment Product** or a **Subscription Product**. For detailed instructions on setting up these products, refer to the following guides:
+  * Instalment Product Creation
+  * Subscription Product Creation
+
+3\. **Find the Recurring ID**:
+
+* After creating the recurring product, go to the product details page.
+* Scroll down to the **Payment Frequency Setting** section.
+* Locate the Recurring ID under the **Recurring Type** heading.
+
+
 
 
 

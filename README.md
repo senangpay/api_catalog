@@ -29,7 +29,7 @@ Utilize the senangPay API for custom integrations and extended functionalities, 
 
 ## Unlock the power of seamless transactions with senangPay API: Your gateway to smarter commerce  <a href="#unlock-the-power-of-seamless-transactions-with-doku-api-your-gateway-to-smarter-commerce" id="unlock-the-power-of-seamless-transactions-with-doku-api-your-gateway-to-smarter-commerce"></a>
 
-Our platform integrates seamlessly with various systems including e-commerce platforms like WooCommerce accounting software, and CRM applications to enhance your operational efficiency.
+Our platform offers seamless integration with a range of systems to boost your operational efficiency. Whether you're using e-commerce platforms like WooCommerce, accounting software, or CRM applications, our integration capabilities ensure smooth and efficient connectivity across your tools.
 
 
 
