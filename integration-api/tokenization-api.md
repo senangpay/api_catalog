@@ -70,16 +70,8 @@ Additionally, we've implemented several extra security measures to ensure that o
 
 
 
-{% swagger src="../.gitbook/assets/swagger phase 1.yaml" path="/apiv1/pay_cc" method="post" %}
-[swagger phase 1.yaml](<../.gitbook/assets/swagger phase 1.yaml>)
-{% endswagger %}
-
-{% swagger src="../.gitbook/assets/swagger phase 1.yaml" path="/apiv1/pay_cc/return" method="get" %}
-[swagger phase 1.yaml](<../.gitbook/assets/swagger phase 1.yaml>)
-{% endswagger %}
-
-{% swagger src="../.gitbook/assets/swagger phase 1.yaml" path="/apiv1/pay_cc/callback" method="post" %}
-[swagger phase 1.yaml](<../.gitbook/assets/swagger phase 1.yaml>)
+{% swagger src="../.gitbook/assets/swagger phase 1_v3.yaml" path="/apiv1/pay_cc" method="post" %}
+[swagger phase 1_v3.yaml](<../.gitbook/assets/swagger phase 1_v3.yaml>)
 {% endswagger %}
 
 ### **2.0 Enable/disable credit card**
@@ -116,10 +108,8 @@ Additionally, we've implemented several extra security measures to ensure that o
 
 
 
-
-
-{% swagger src="../.gitbook/assets/swagger phase 1.yaml" path="/apiv1/update_token_status" method="get" %}
-[swagger phase 1.yaml](<../.gitbook/assets/swagger phase 1.yaml>)
+{% swagger src="../.gitbook/assets/swagger phase 1_v3.yaml" path="/apiv1/update_token_status" method="post" %}
+[swagger phase 1_v3.yaml](<../.gitbook/assets/swagger phase 1_v3.yaml>)
 {% endswagger %}
 
 ### **3.0 Validate payment token**
@@ -137,8 +127,6 @@ Additionally, we've implemented several extra security measures to ensure that o
 | Username | <p>&#x3C; your-merchant-id ><br>As listed in the profile settings page.</p> |
 | Password | None, leave empty.                                                          |
 
-###
-
 ### **3.2 Request Parameter (All Mandatory)**
 
 | Parameter Name | Parameter value / description      |
@@ -152,5 +140,9 @@ Additionally, we've implemented several extra security measures to ensure that o
 <table data-header-hidden><thead><tr><th width="223"></th><th></th></tr></thead><tbody><tr><td><strong>Parameter Name</strong></td><td><strong>Parameter value/description</strong></td></tr><tr><td>status</td><td><p>Token validation result. </p><ul><li><code>1</code> for success</li><li><code>0</code> for failure.</li></ul></td></tr><tr><td>msg</td><td>Message on token validation. "<strong>Card has been successfully verified</strong>" if successful, or an error message if not.</td></tr><tr><td>token</td><td>The token from the <em>Get Token API,</em> unchanged, showing whether it's enabled or disabled.</td></tr></tbody></table>
 
 
+
+{% swagger src="../.gitbook/assets/swagger phase 1_v3.yaml" path="/apiv1/validate_token" method="post" %}
+[swagger phase 1_v3.yaml](<../.gitbook/assets/swagger phase 1_v3.yaml>)
+{% endswagger %}
 
 [^1]: 

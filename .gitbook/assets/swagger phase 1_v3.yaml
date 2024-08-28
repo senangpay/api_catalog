@@ -1,0 +1,511 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: API Integration
+  description: Manual API, Tokenization API and Recurring API integration
+  
+servers:
+  - url: 'https://sandbox.senangpay.my'
+    description: Sandbox
+  - url: 'https://app.senangpay.my'
+    description: Production
+
+tags:
+  - name: Manual API
+    description: Payment integration
+  - name: Tokenization API
+    description: Token ID for CC details
+  - name: Recurring API
+    description: Recurring payment - installment or subscription
+
+paths:
+  /payment/{merchantID}:                  
+    post:
+      tags:
+        - Manual API
+      summary: Initiate a new payment with SenangPay
+      description: This endpoint creates a payment request to SenangPay with the required details.
+      operationId: addPayment
+      parameters:
+        - name: merchantID
+          in: path
+          description: Retrievable in the senangPay Dashboard
+          required: true
+          schema:
+            type: string
+            example: 14222653788472
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+             $ref: '#/components/schemas/ManualAPIRequest'
+
+      responses:
+        "302":
+          description: Redirects to SenangPay's payment page.
+          headers:
+            Location:
+              description: SenangPay's payment page URL where the user is redirected.
+              schema:
+                type: string
+                example: "https://sandbox.senangpay.my/payment/..."
+
+  /<merchant return URL>:
+    get:
+      tags:
+        - Manual API
+      summary: Handle post-payment redirect from SenangPay
+      description: This endpoint handles the return from SenangPay after a payment attempt. It can be your receipt or order status page.
+  
+  /<merchant callback URL>:
+    post:
+      tags:
+        - Manual API
+      summary: Handle callback from SenangPay
+      description: This endpoint receives callbacks from SenangPay with the payment result.
+
+  /tokenization:
+    get:
+      tags:
+        - Tokenization API
+      summary: Get token API (3D Token)
+      description: Use this endpoint to send tokenization request.
+      parameters:
+        - in: query
+          name: order_id
+          schema:
+            type: string
+          required: true
+          description: Merchant unique order ID for each tokenization request.
+        - in: query
+          name: name
+          schema:
+            type: string
+          required: true
+          description: Customer's name. Max length 100.
+        - in: query
+          name: email
+          schema:
+            type: string
+          required: true
+          description: Customer's email address.
+        - in: query
+          name: phone
+          schema:
+            type: string
+          required: true
+          description: Customer's phone number.
+        - in: query
+          name: hash
+          schema:
+            type: string
+          required: true
+          description: Hash generated using HMAC SHA256. Construct the hash as follows <br/><br/>
+                      hash_hmac(‘SHA256’, {merchant_id}{order_id}, {merchant_secret_key})
+      responses:
+        "200":
+          description: User will be redirected to merchant tokenization return URL with the following parameters. The same set of parameters will also be sent to merchant tokenization callback URL.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTokenAPIResponse'
+                
+  /apiv1/pay_cc:                
+    post:
+      tags:
+        - Tokenization API
+      summary: Charge credit card using token
+      security:
+        - basicAuth: []
+      description: Charge credit card using token
+      operationId: getCCDetail
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+             $ref: '#/components/schemas/ChargeCCUsingToken'
+
+      responses:
+        "200":
+          description: Charge credit card using token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayTokenResponse'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/UnauthorizedError'
+
+  /apiv1/update_token_status:
+    post:
+      tags:
+        - Tokenization API
+      summary: Enable / disable Credit Cards
+      description: Enable or disable Credit Card by token
+      security:
+        - basicAuth: []
+      operationId: enableDisableCCToken
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+             $ref: '#/components/schemas/EnableDisableCC'
+
+      responses:
+        "200":
+          description: Response update token status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EnableDisableCCResponse'
+
+  /apiv1/validate_token:
+    post:
+      tags:
+        - Tokenization API
+      summary: Check token validity
+      description: Endpoint to validates the supplied token
+      security:
+        - basicAuth: []
+      operationId: validateCCToken
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+             $ref: '#/components/schemas/ValidateCCToken'
+
+      responses:
+        "200":
+          description: Charge credit card using token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidateCCTokenResponse'
+          
+  /recurring/payment/{merchantID}:
+    post:
+      tags:
+        - Recurring API
+      summary: API for recurring payment
+      operationId: recurringAPI
+      parameters:
+        - name: merchantID
+          in: path
+          description: Retrievable from senangPay dashboard
+          required: true
+          schema:
+            type: string
+            example: 14222653788472
+
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Recurring'
+      
+      responses:
+        200:
+          description: Successfully send recurring API request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecurringResponse' 
+                    
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+  schemas:
+
+    Payment:
+      description: Model containing payment info
+      properties:
+          detail:
+            type: string
+            example: Shopping cart id 30    
+          amount:
+            type: integer
+            example: 25.50   
+          order id:
+            type: string
+            example: 3432D4     
+          hash:
+            type: string
+            example: a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeedff7728f      
+          name:
+            type: string
+            example: Amir      
+          email:
+            type: string
+            example: amir@email.cm       
+          phone:
+            type: integer
+            example: 0123456789 
+          timeout:
+            type: integer
+            example: 450
+
+    ManualAPIRequest:
+      description: Manual API request parameters.
+      properties:
+        detail:
+          type: string
+          example: Shopping cart id 30   
+        amount:
+          type: number
+          example: 25.50  
+        order id:
+          type: string
+          description: Unique identifier for the order
+          example: "ORD12345"  
+        hash:
+          type: string
+          example: a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeed    
+        name:
+          type: string
+          example: Amir     
+        email:
+          type: string
+          example: amir@email.com  
+        phone:
+          type: string
+          example: 0123456789
+        timeout:
+          type: integer
+          example: 480
+          description: in seconds
+      required:
+        - amount
+        - order id
+        - name
+        - email
+        - phone
+        - return_url
+        - callback_url
+
+    GetTokenAPIResponse:
+      description: Response parameters for Get Token API
+      properties:
+        status_id:
+          type: string
+          description: Token creation status (1 for success, 0 for failure)
+          example: "1"
+        order_id:
+          type: string
+          description: Merchant unique order ID for each tokenization request
+          example: "ORD12345"
+        token:
+          type: string
+          description: Card validation.The token will be used for future payments made on the card. If card validation fails, token value will be 0
+          example: "758TX123456KUBG789"
+        cc_num:
+          type: string
+          description: The last four digits of the card. If card validation fails, cc_num value will be 0000
+          example: "XXXXXXXXXXXX1145"
+        cc_type:
+          type: string
+          description: Visa (vs) or Mastercard (mc). When card validation fails, the value is xx
+          example: "vs"
+        msg:
+          type: string
+          description: Card validation status message.
+          example: "Card validate"
+        hash:
+          type: string
+          description: Hash generated to compare against.
+          example: "151bf4a479ed166d6b211528d0a0b452625c8fe83656489c82286fcb975889b5"
+
+    ChargeCCUsingToken:
+      description: Request parameters for payment using tokenization
+      properties:
+          name:
+            type: string
+            example: Abu Bin Ali    
+          email:
+            type: string
+            example: ahmad@google.com    
+          detail:
+            type: string
+            example: Order for product id 4    
+          phone:
+            type: integer
+            example: 0123456789   
+          order id:
+            type: string
+            example: 3432D4     
+          amount:
+            type: integer
+            example: 25.50       
+          token:
+            type: string
+            description: Generated token from Get Token API
+            example: D12820HJ  
+          hash:
+            type: string
+            description: Hash generated using HMAC SHA256. Construct the hash as follows <br/><br/>
+                      hash_hmac(‘SHA256’, < your merchant id >< name >< email >< phone >< detail >< order_id >< amount >, <merchant_secret_key>) <br/>
+                      without the < > character
+            example: a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeedff7728f
+
+    PayTokenResponse:
+      description: Response parameters for payment using tokenization
+      properties:
+          status:
+            type: integer
+            example: 1  
+            description: Your transaction status. 1 if successful. 0 if failed.
+          transaction_id:
+            type: string
+            example: 15899864888614642
+            description: Unique transaction ID  
+          order_id:
+            type: string
+            example: 3432D4
+          amount_paid:
+            type: integer
+            example: 200
+            description: If the amount transacted is RM 2.00, it will output 200.   
+          msg:
+            type: string
+            example: Payment was successful
+            description: Transaction status message
+          hash:
+            type: string
+            description: Hash generated using HMAC SHA256. Construct the hash as follows <br/><br/>
+                      hash_hmac(‘SHA256’, < your merchant id >< status_id >< order_id >< transaction_id >< amount_paid >< msg >, <merchant_secret_key>) <br/>
+                      without the < > character
+            example: a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeedff7728f
+
+    TokenStatus:
+      description: Model containing cc payment info
+      properties:
+          status:
+            type: integer
+            format: int64
+            example: 1
+          transaction id:
+            type: string
+            example: WSJ30000097DO   
+          order id:
+            type: string
+            example: 3432D5   
+          amount paid:
+            type: integer
+            example: 200   
+          msg:
+            type: string
+            example: Payment was successful    
+          hash:
+            type: string
+            example: a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeedff7728f
+
+    EnableDisableCC:
+      description: Request parameters to enable/disable credit cards using token
+      properties:
+          token:
+            type: string
+            example: 6bcc32c3cf4c6de03f4b3c967a36606d965d54cd51eb6cb7507555e2ad7b4521
+            description: Generated token from Get Token API
+
+    EnableDisableCCResponse:
+      description: Response parameters to enable/disable credit cards using token
+      properties:
+          msg:
+            type: string
+            example: Credit card successfully disabled
+            description: Status message.
+          token:
+            type: string
+            example: 6bcc32c3cf4c6de03f4b3c967a36606d965d54cd51eb6cb7507555e2ad7b4521
+            description: Generated token from Get Token API
+
+    ValidateCCToken:
+      description: Request parameters to validate token
+      properties:
+          token:
+            type: string
+            example: 6bcc32c3cf4c6de03f4b3c967a36606d965d54cd51eb6cb7507555e2ad7b4521
+            description: Generated token from Get Token API
+
+    ValidateCCTokenResponse:
+      description: Response parameters of token validity
+      properties:
+          status:
+            type: integer
+            example: 1
+            description: Token validation status. 1 if success. 0 if failed.
+          msg:
+            type: string
+            example: Card has been successfully verified
+            description: Status message.
+          token:
+            type: string
+            example: 6bcc32c3cf4c6de03f4b3c967a36606d965d54cd51eb6cb7507555e2ad7b4521
+            description: Generated token from Get Token API
+
+    Recurring:
+      description: Request parameters to use recurring API
+      properties:
+          order_id:
+            type: string
+            example: 3432D4  
+            description: Unique Order ID, max length 100.
+          recurring_id:
+            type: string
+            example: 1534997305
+            description: Recurring product/item ID retrievable from senangPay dashboard.
+          hash:
+            type: string
+            example: a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeedff7728f
+          name:
+            type: string
+            example: Abu Bin Ali
+            description: Customer's name.
+          email:
+            type: string
+            example: ahmad@google.com
+            description: Customer's email.
+          phone:
+            type: string
+            example: 0123456789
+            description: Customer's phone number.
+
+    RecurringResponse:
+      description: Response parameters for recurring API
+      properties:
+          status_id:
+            type: integer
+            example: 1  
+            description: Payment status. 1 - Paid, 0 - Failed, 3 - Pending Payment for Recurring Schedule (First time only). 
+          order_id:
+            type: string
+            example: 3432D4
+            description: Your unique order ID
+          msg:
+            type: string
+            example: Payment_was_successful
+            description: Message to describe the payment status.
+          transaction_id:
+            type: string
+            example: 14363538840
+            description: senangPay generated unique transaction ID
+          hash:
+            type: string
+            example: a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeedff7728f
+          
+  responses:
+    UnauthorizedError:
+      description: Authentication information is missing or invalid
+      headers:
+        WWW_Authenticate:
+          schema:
+            type: string

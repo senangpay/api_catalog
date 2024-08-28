@@ -56,8 +56,8 @@ Below are the details of the elements in the table:
 
 
 
-{% swagger src="../.gitbook/assets/swagger phase 1.yaml" path="/recurring/payment/{merchantID}" method="post" %}
-[swagger phase 1.yaml](<../.gitbook/assets/swagger phase 1.yaml>)
+{% swagger src="../.gitbook/assets/swagger phase 1_v3.yaml" path="/recurring/payment/{merchantID}" method="post" %}
+[swagger phase 1_v3.yaml](<../.gitbook/assets/swagger phase 1_v3.yaml>)
 {% endswagger %}
 
 ## **What Parameters does the shopping cart receive from senangPay**

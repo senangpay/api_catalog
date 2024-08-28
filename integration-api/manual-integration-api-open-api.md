@@ -37,14 +37,14 @@ Below are the details of the elements in the table :
 
 
 
-{% swagger src="../.gitbook/assets/swagger phase 1.yaml" path="/payment/{merchantID}" method="post" %}
-[swagger phase 1.yaml](<../.gitbook/assets/swagger phase 1.yaml>)
+{% swagger src="../.gitbook/assets/swagger phase 1_v3.yaml" path="/payment/{merchantID}" method="post" %}
+[swagger phase 1_v3.yaml](<../.gitbook/assets/swagger phase 1_v3.yaml>)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/swagger phase 1.yaml" path="/payment/return" method="get" %}
-[swagger phase 1.yaml](<../.gitbook/assets/swagger phase 1.yaml>)
+{% swagger src="../.gitbook/assets/swagger phase 1_v3.yaml" path="/<merchant return URL>" method="get" %}
+[swagger phase 1_v3.yaml](<../.gitbook/assets/swagger phase 1_v3.yaml>)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/swagger phase 1.yaml" path="/payment/callback" method="post" %}
-[swagger phase 1.yaml](<../.gitbook/assets/swagger phase 1.yaml>)
+{% swagger src="../.gitbook/assets/swagger phase 1_v3.yaml" path="/<merchant callback URL>" method="post" %}
+[swagger phase 1_v3.yaml](<../.gitbook/assets/swagger phase 1_v3.yaml>)
 {% endswagger %}
