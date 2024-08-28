@@ -46,4 +46,4 @@ You can use the test credit card below to make payments at our sandbox. Other cr
 
 
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-08-20 at 1.42.29 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/register-ui-01.jpg" alt=""><figcaption></figcaption></figure>
