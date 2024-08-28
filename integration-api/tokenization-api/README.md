@@ -16,7 +16,17 @@ If senangPay is unable to process this charge, it indicates that the card is inv
 
 
 
+
+
+<figure><img src="../../.gitbook/assets/flow-02.png" alt=""><figcaption></figcaption></figure>
+
+
+
 ***
+
+
+
+
 
 {% content-ref url="3d-get-token.md" %}
 [3d-get-token.md](3d-get-token.md)
@@ -25,3 +35,4 @@ If senangPay is unable to process this charge, it indicates that the card is inv
 {% content-ref url="api-list.md" %}
 [api-list.md](api-list.md)
 {% endcontent-ref %}
+
