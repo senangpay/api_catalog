@@ -4,15 +4,15 @@ icon: key
 
 # Tokenization API
 
-Allows merchant to charge customer’s credit card without the need to enter the credit card details (name, card number, expiry and cvv). To get this feature in your dashboard, you can notify us by sending a ticket from the dashboard or guide page. This application shall be subjected to senangPay approval which we will review at our own discretion. Merchant must provide us the **Terms of Contract** between merchant and the other party user.
+This feature lets merchants charge a customer’s credit card without needing to manually enter card details (such as the card number, expiration date, or CVV). To enable this feature on your dashboard, please submit a request through the ticket system available in the dashboard or guide page. Approval for this feature is at senangPay's discretion, and we will review your request accordingly. Additionally, merchants must provide the Terms of Contract between themselves and the user for our review.
 
 
 
 ## **How does it works?**
 
-Merchant’s customers will enter their credit card details one time only. During this one time process, senangPay will validate the card to make sure the card is valid by charging an amount of RM1 to the card. Not to worry that this amount will be voided later. Meaning that the transaction will never appeared on the customer’s credit card statement.
+Customers will need to enter their credit card details only once. During this process, senangPay will validate the card by charging a temporary amount of RM1. Rest assured, this charge will be promptly voided and will not appear on the customer’s credit card statement.
 
-If senangPay failed to charge the card, meaning that the card is not valid. Once validated, the card’s info will be stored in senangPay’s server (PCI-DSS certified).
+If senangPay is unable to process this charge, it indicates that the card is invalid. Once the card is successfully validated, its information will be securely stored on senangPay’s PCI-DSS certified servers.
 
 
 
@@ -20,7 +20,9 @@ If senangPay failed to charge the card, meaning that the card is not valid. Once
 
 ## API List
 
-We have developed a new secure way of generating token for our tokenization payment. In this new feature, card holder is required to pass the OTP (3D secure) check before able to get the payment token. Also, there are few extra layers been added to ensure no non authorised card being used for this tokenization payment feature.
+We are excited to introduce an enhanced, secure method for generating tokens for our tokenization payment system. This new feature adds an additional layer of security by requiring cardholders to complete an OTP (3D Secure) verification before they can obtain a payment token.
+
+Additionally, we've implemented several extra security measures to ensure that only authorized cards are used for tokenization. These improvements are designed to safeguard against unauthorized use and further protect your transactions.
 
 
 
