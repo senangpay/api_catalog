@@ -16,9 +16,15 @@ If senangPay is unable to process this charge, it indicates that the card is inv
 
 
 
+## Elevating Security: New OTP Verification and Enhanced Measures for Tokenization Protection
+
+We are excited to introduce an enhanced, secure method for generating tokens for our tokenization payment system. This new feature adds an additional layer of security by requiring cardholders to complete an OTP (3D Secure) verification before they can obtain a payment token.
+
+Additionally, we've implemented several extra security measures to ensure that only authorized cards are used for tokenization. These improvements are designed to safeguard against unauthorized use and further protect your transactions.
 
 
-<figure><img src="../../.gitbook/assets/flow-02.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/flow-02.png" alt=""><figcaption><p>Token Generation Flow: From Token Creation to Payment Card Use and Callback Confirmation</p></figcaption></figure>
 
 
 
@@ -32,7 +38,7 @@ If senangPay is unable to process this charge, it indicates that the card is inv
 [3d-get-token.md](3d-get-token.md)
 {% endcontent-ref %}
 
-{% content-ref url="api-list.md" %}
-[api-list.md](api-list.md)
+{% content-ref url="tokenization-api-list.md" %}
+[tokenization-api-list.md](tokenization-api-list.md)
 {% endcontent-ref %}
 

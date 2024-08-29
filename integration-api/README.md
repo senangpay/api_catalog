@@ -10,8 +10,8 @@ At Senangpay, we offer several types of integration APIs. For more details, plea
 [manual-integration-api-open-api](manual-integration-api-open-api/)
 {% endcontent-ref %}
 
-{% content-ref url="api-for-recurring-payment.md" %}
-[api-for-recurring-payment.md](api-for-recurring-payment.md)
+{% content-ref url="api-for-recurring-payment/" %}
+[api-for-recurring-payment](api-for-recurring-payment/)
 {% endcontent-ref %}
 
 {% content-ref url="tokenization-api/" %}

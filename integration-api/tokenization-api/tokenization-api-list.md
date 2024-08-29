@@ -2,13 +2,7 @@
 icon: gear-complex
 ---
 
-# API List
-
-We are excited to introduce an enhanced, secure method for generating tokens for our tokenization payment system. This new feature adds an additional layer of security by requiring cardholders to complete an OTP (3D Secure) verification before they can obtain a payment token.
-
-Additionally, we've implemented several extra security measures to ensure that only authorized cards are used for tokenization. These improvements are designed to safeguard against unauthorized use and further protect your transactions.
-
-
+# Tokenization API List
 
 ### **1.0 Pay credit card using token**
 
@@ -30,7 +24,7 @@ Additionally, we've implemented several extra security measures to ensure that o
 
 ### **1.2 Request Parameter (All Mandatory)**
 
-<table data-header-hidden><thead><tr><th width="267"></th><th></th></tr></thead><tbody><tr><td><strong>Parameter Name</strong></td><td><strong>Parameter value/description</strong></td></tr><tr><td><a data-footnote-ref href="#user-content-fn-1">name</a></td><td><p>Your customer name. Maximum length is 100.</p><ul><li>Example : Abu Bin Ali</li></ul></td></tr><tr><td>email</td><td><p>Your customer email.</p><ul><li>Example :  ahmad@google.com</li></ul></td></tr><tr><td>detail</td><td><p>Your order detail. Maximum length is 100. </p><ul><li>Example : Order for product id #4</li></ul></td></tr><tr><td>phone</td><td><p>Your customer phone number.</p><ul><li>Example : 0109876543</li></ul></td></tr><tr><td>order_id</td><td><p>Your order id. Can be number or string. Other character is invalid. </p><ul><li>Example : 123</li></ul></td></tr><tr><td>amount</td><td><p>Your order amount in integer format. Convert from decimals as necessary.</p><ul><li>Example : if the amount is RM 2.00, you need to send 200.</li></ul></td></tr><tr><td>token</td><td>Generated token from Get Token API</td></tr><tr><td>hash</td><td>A string generated using your secret key (found in your profile settings) with the HMAC SHA256 algorithm. The format is as follows:<br><code>&#x3C;your merchant id>&#x3C;name>&#x3C;email>&#x3C;phone>&#x3C;detail>&#x3C;order_id>&#x3C;amount></code><br>*<em>Note: Do not include the <code>&#x3C; ></code> characters.*</em></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="267"></th><th></th></tr></thead><tbody><tr><td><strong>Parameter Name</strong></td><td><strong>Parameter value/description</strong></td></tr><tr><td><a data-footnote-ref href="#user-content-fn-1">name</a></td><td><p>Your customer name. Maximum length is 100.</p><ul><li>Example : Abu Bin Ali</li></ul></td></tr><tr><td>email</td><td><p>Your customer email.</p><ul><li>Example :  ahmad@google.com</li></ul></td></tr><tr><td>detail</td><td><p>Your order detail. Maximum length is 100. </p><ul><li>Example : Order for product id #4</li></ul></td></tr><tr><td>phone</td><td><p>Your customer phone number.</p><ul><li>Example : 0109876543</li></ul></td></tr><tr><td>order_id</td><td><p>Your order id. Can be number or string. Other character is invalid. </p><ul><li>Example : 123</li></ul></td></tr><tr><td>amount</td><td><p>Your order amount in integer format. Convert from decimals as necessary.</p><ul><li>Example : if the amount is RM 2.00, you need to send 200.</li></ul></td></tr><tr><td>token</td><td>Generated token from <a href="3d-get-token.md#integration-method">Get Token API</a></td></tr><tr><td>hash</td><td>A string generated using your secret key (found in your profile settings) with the HMAC SHA256 algorithm. The format is as follows:<br><code>&#x3C;your merchant id>&#x3C;name>&#x3C;email>&#x3C;phone>&#x3C;detail>&#x3C;order_id>&#x3C;amount></code><br>*<em>Note: Do not include the <code>&#x3C; ></code> characters.*</em></td></tr></tbody></table>
 
 
 
@@ -54,8 +48,8 @@ Additionally, we've implemented several extra security measures to ensure that o
 
 
 
-{% swagger src="../../.gitbook/assets/swagger phase 1_v3.yaml" path="/apiv1/pay_cc" method="post" %}
-[swagger phase 1_v3.yaml](<../../.gitbook/assets/swagger phase 1_v3.yaml>)
+{% swagger src="../../.gitbook/assets/swagger phase 1_update code.yaml" path="/apiv1/pay_cc" method="post" %}
+[swagger phase 1_update code.yaml](<../../.gitbook/assets/swagger phase 1_update code.yaml>)
 {% endswagger %}
 
 ###
@@ -79,9 +73,9 @@ Additionally, we've implemented several extra security measures to ensure that o
 
 ### **2.2 Request Parameter (All Mandatory)**
 
-| Parameter Name | Parameter value / description      |
-| -------------- | ---------------------------------- |
-| token          | Generated token from Get Token API |
+| Parameter Name | Parameter value / description                                            |
+| -------------- | ------------------------------------------------------------------------ |
+| token          | Generated token from [Get Token API](3d-get-token.md#integration-method) |
 
 
 
@@ -94,8 +88,8 @@ Additionally, we've implemented several extra security measures to ensure that o
 
 
 
-{% swagger src="../../.gitbook/assets/swagger phase 1_v3.yaml" path="/apiv1/update_token_status" method="post" %}
-[swagger phase 1_v3.yaml](<../../.gitbook/assets/swagger phase 1_v3.yaml>)
+{% swagger src="../../.gitbook/assets/swagger phase 1_update code.yaml" path="/apiv1/update_token_status" method="post" %}
+[swagger phase 1_update code.yaml](<../../.gitbook/assets/swagger phase 1_update code.yaml>)
 {% endswagger %}
 
 ###
@@ -117,9 +111,9 @@ Additionally, we've implemented several extra security measures to ensure that o
 
 ### **3.2 Request Parameter (All Mandatory)**
 
-| Parameter Name | Parameter value / description      |
-| -------------- | ---------------------------------- |
-| token          | Generated token from Get Token API |
+| Parameter Name | Parameter value / description                                            |
+| -------------- | ------------------------------------------------------------------------ |
+| token          | Generated token from [Get Token API](3d-get-token.md#integration-method) |
 
 &#x20;
 
@@ -129,8 +123,10 @@ Additionally, we've implemented several extra security measures to ensure that o
 
 
 
-{% swagger src="../../.gitbook/assets/swagger phase 1_v3.yaml" path="/apiv1/validate_token" method="post" %}
-[swagger phase 1_v3.yaml](<../../.gitbook/assets/swagger phase 1_v3.yaml>)
+{% swagger src="../../.gitbook/assets/swagger phase 1_update code.yaml" path="/apiv1/validate_token" method="post" %}
+[swagger phase 1_update code.yaml](<../../.gitbook/assets/swagger phase 1_update code.yaml>)
 {% endswagger %}
+
+
 
 [^1]: 

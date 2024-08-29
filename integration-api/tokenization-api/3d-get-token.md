@@ -76,8 +76,8 @@ $hash = hash_hmac('sha256', $string_to_hash, $secret_key);
 
 &#x20;
 
-{% swagger src="../../.gitbook/assets/swagger phase 1_v3.yaml" path="/tokenization" method="get" %}
-[swagger phase 1_v3.yaml](<../../.gitbook/assets/swagger phase 1_v3.yaml>)
+{% swagger src="../../.gitbook/assets/swagger phase 1_update code.yaml" path="/tokenization" method="get" %}
+[swagger phase 1_update code.yaml](<../../.gitbook/assets/swagger phase 1_update code.yaml>)
 {% endswagger %}
 
 
@@ -89,3 +89,4 @@ The callback URL is used as an alternative notification to merchant backend in c
 The callback process will send the same parameters as what is being sent to the return URL. The callback URL must print out a simple ‘OK’ without any HTML tags. The OK response is needed in order for the callback function to know if it has successfully sent the callback data.
 
 senangPay will fire the callback one minute after the validation is done.
+

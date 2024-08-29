@@ -33,8 +33,8 @@ Below are the details of the elements in the table :
 
 
 
-{% swagger src="../../.gitbook/assets/swagger phase 1_v4.yaml" path="/payment/{merchantID}" method="post" %}
-[swagger phase 1_v4.yaml](<../../.gitbook/assets/swagger phase 1_v4.yaml>)
+{% swagger src="../../.gitbook/assets/swagger phase 1_update code.yaml" path="/payment/{merchantID}" method="post" %}
+[swagger phase 1_update code.yaml](<../../.gitbook/assets/swagger phase 1_update code.yaml>)
 {% endswagger %}
 
 ### Handles 'Return' & 'Callback' from SenangPay
@@ -51,4 +51,5 @@ The table below lists the details of the elements:
 | order\_id       | This is the order that is sent to senangPay. This is to identify the shopping cart transaction.                                                                                                                                                                         |
 | msg             | This is the message to describe the payment status. The maximum length is 100 characters. Take note that the message may contain underscores. You can replace the underscore as space when displaying the message to your customers. Example: Payment\_was\_successful. |
 | transaction\_id | This is the transaction ID used by senangPay. You can use this ID to track the transaction in senangPay. The maximum length is 100 characters. Example 14363538840                                                                                                      |
-| hash            | This is the data to ensure that data integrity has passed from senangPay to the merchant’s shopping cart. Refer to section ‘How to verify if the secure hash is correct’ for more info.                                                                                 |
+| hash            | This is the data to ensure that data integrity has passed from senangPay to the merchant’s shopping cart. Refer to section ‘[How to verify if the secure hash is correct](generate-secure-hash.md#how-to-verify-if-the-secure-hash-is-correct)’ for more info.          |
+
