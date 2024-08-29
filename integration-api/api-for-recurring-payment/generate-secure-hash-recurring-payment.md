@@ -58,7 +58,7 @@ $hash = hash(‘sha256’,$secret_key.$status_id.$order_id.$transaction_id.$msg)
 
 3\. So, the string to be hashed is **21245-95711214363538840Payment\_was\_successful,** which will generate the hash values of:
 
-* **24354422953c29bf4b822f6783bbaf64ef445623d6e8ea4ddc1582a29c03cda0**
+**24354422953c29bf4b822f6783bbaf64ef445623d6e8ea4ddc1582a29c03cda0**
 
 4\. Compare the hash value that you have generated with the hash value sent from senangPay. If the value does not match then the data may have been tampered with.
 

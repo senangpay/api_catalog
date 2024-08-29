@@ -37,7 +37,7 @@ Below are the details of the elements in the table :
 [swagger phase 1_update code.yaml](<../../.gitbook/assets/swagger phase 1_update code.yaml>)
 {% endswagger %}
 
-### Handles 'Return' & 'Callback' from SenangPay
+### Handles 'Return' & 'Callback' from senangPay
 
 1\. The parameters will be send using **GET** method.
 
