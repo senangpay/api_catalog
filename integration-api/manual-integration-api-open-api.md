@@ -21,10 +21,6 @@ Go to **Menu** > **Settings** > **Profile**
 * Provide the Callback URL, which serves as an alternative notification method if there is an issue with the transaction flow.
 * For more information on the Callback URL, please [read here ->](https://guide.senangpay.my/callback-url/)
 
-
-
-&#x20;
-
 Ensure you have these details ready to facilitate a smooth integration process.
 
 
@@ -41,10 +37,18 @@ Below are the details of the elements in the table :
 [swagger phase 1_v4.yaml](<../.gitbook/assets/swagger phase 1_v4.yaml>)
 {% endswagger %}
 
-{% swagger src="../.gitbook/assets/swagger phase 1_v3.yaml" path="/<merchant return URL>" method="get" %}
-[swagger phase 1_v3.yaml](<../.gitbook/assets/swagger phase 1_v3.yaml>)
-{% endswagger %}
+### Handles 'Return' & 'Callback' from SenangPay
 
-{% swagger src="../.gitbook/assets/swagger phase 1_v3.yaml" path="/<merchant callback URL>" method="post" %}
-[swagger phase 1_v3.yaml](<../.gitbook/assets/swagger phase 1_v3.yaml>)
-{% endswagger %}
+1\. The parameters will be send using **GET** method.
+
+2\. The parameters are sent to URL as configured in the [return URL](manual-integration-api-open-api.md#information-required). Refer to the **‘Information Required’** section.
+
+The table below lists the details of the elements:
+
+| Item            | Detail                                                                                                                                                                                                                                                                  |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| status\_id      | This is to indicate the status of the payment. It only has 3 values which is ; 2 for **pending authorization**, 1 for **successful** and 0 for **failed.**                                                                                                              |
+| order\_id       | This is the order that is sent to senangPay. This is to identify the shopping cart transaction.                                                                                                                                                                         |
+| msg             | This is the message to describe the payment status. The maximum length is 100 characters. Take note that the message may contain underscores. You can replace the underscore as space when displaying the message to your customers. Example: Payment\_was\_successful. |
+| transaction\_id | This is the transaction ID used by senangPay. You can use this ID to track the transaction in senangPay. The maximum length is 100 characters. Example 14363538840                                                                                                      |
+| hash            | This is the data to ensure that data integrity has passed from senangPay to the merchant’s shopping cart. Refer to section ‘How to verify if the secure hash is correct’ for more info.                                                                                 |
