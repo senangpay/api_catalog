@@ -16,7 +16,7 @@ If senangPay is unable to process this charge, it indicates that the card is inv
 
 
 
-## Elevating Security: New OTP Verification and Enhanced Measures for Tokenization Protection
+## Introducing enhanced tokenisation: New OTP verification and advanced security measures
 
 We are excited to introduce an enhanced, secure method for generating tokens for our tokenization payment system. This new feature adds an additional layer of security by requiring cardholders to complete an OTP (3D Secure) verification before they can obtain a payment token.
 
@@ -29,8 +29,6 @@ Additionally, we've implemented several extra security measures to ensure that o
 
 
 ***
-
-
 
 
 

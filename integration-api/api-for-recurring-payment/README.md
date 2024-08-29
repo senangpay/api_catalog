@@ -60,7 +60,13 @@ Below are the details of the elements in the table:
 [swagger phase 1_update code.yaml](<../../.gitbook/assets/swagger phase 1_update code.yaml>)
 {% endswagger %}
 
-## **What Parameters does the shopping cart receive from senangPay**
+
+
+## Handles 'Return' & 'Callback' from senangPay
+
+1\. The parameters will be sent using **GET** method.
+
+2\. The parameters are sent to URL as configured in the **Recurring Return URL**. Refer to **‘Information Required’** section
 
 Below are the details of the elements in the table:
 
@@ -72,11 +78,7 @@ Below are the details of the elements in the table:
 | `transaction_id` | <p>senangPay's unique transaction ID. Max 100 characters. </p><ul><li>Example: 14363538840. </li></ul><p>Use it to track transactions in senangPay.</p>                                                            |
 | `hash`           | Ensures data integrity from senangPay to your shopping cart. See the ‘[How to verify the secure hash](generate-secure-hash-recurring-payment.md#how-to-verify-if-the-secure-hash-is-correct)’ section for details. |
 
-## **How senangPay sends the parameters to merchant’s shopping cart**
 
-1\. The parameters will be sent using GET method.
-
-2\. The parameters are sent to URL as configured in the **Recurring Return URL**. Refer to **‘Information Required’** section
 
 
 
