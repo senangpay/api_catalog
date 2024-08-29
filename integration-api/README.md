@@ -6,8 +6,8 @@ This allows developers to link diverse software solutions, automate workflows, a
 
 At Senangpay, we offer several types of integration APIs. For more details, please click the link below.
 
-{% content-ref url="manual-integration-api-open-api.md" %}
-[manual-integration-api-open-api.md](manual-integration-api-open-api.md)
+{% content-ref url="manual-integration-api-open-api/" %}
+[manual-integration-api-open-api](manual-integration-api-open-api/)
 {% endcontent-ref %}
 
 {% content-ref url="api-for-recurring-payment.md" %}

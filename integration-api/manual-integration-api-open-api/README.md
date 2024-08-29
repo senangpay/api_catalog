@@ -33,15 +33,15 @@ Below are the details of the elements in the table :
 
 
 
-{% swagger src="../.gitbook/assets/swagger phase 1_v4.yaml" path="/payment/{merchantID}" method="post" %}
-[swagger phase 1_v4.yaml](<../.gitbook/assets/swagger phase 1_v4.yaml>)
+{% swagger src="../../.gitbook/assets/swagger phase 1_v4.yaml" path="/payment/{merchantID}" method="post" %}
+[swagger phase 1_v4.yaml](<../../.gitbook/assets/swagger phase 1_v4.yaml>)
 {% endswagger %}
 
 ### Handles 'Return' & 'Callback' from SenangPay
 
 1\. The parameters will be send using **GET** method.
 
-2\. The parameters are sent to URL as configured in the [return URL](manual-integration-api-open-api.md#information-required). Refer to the **‘Information Required’** section.
+2\. The parameters are sent to URL as configured in the [return URL](./#information-required). Refer to the **‘Information Required’** section.
 
 The table below lists the details of the elements:
 

@@ -43,7 +43,7 @@ Our platform offers seamless integration with a range of systems to boost your o
 
 ## For developers <a href="#ready-to-transform-the-way-you-transact-lets-make-it-happen-with-dokus-api" id="ready-to-transform-the-way-you-transact-lets-make-it-happen-with-dokus-api"></a>
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Set up your development integration</strong> </td><td>Familiarize with the API Documentation</td><td><a href="integration-api/manual-integration-api-open-api.md"><mark style="color:blue;">-></mark></a></td></tr><tr><td><strong>Integration Guide: From Code to Checkout</strong></td><td>Ensure a smooth integration from start to finish.</td><td><a href="integration-api/api-for-recurring-payment.md"><mark style="color:blue;">-></mark></a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Set up your development integration</strong> </td><td>Familiarize with the API Documentation</td><td><a href="integration-api/manual-integration-api-open-api/"><mark style="color:blue;">-></mark></a></td></tr><tr><td><strong>Integration Guide: From Code to Checkout</strong></td><td>Ensure a smooth integration from start to finish.</td><td><a href="integration-api/api-for-recurring-payment.md"><mark style="color:blue;">-></mark></a></td></tr></tbody></table>
 
 
 
