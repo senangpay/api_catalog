@@ -4,7 +4,7 @@
 
 Ready to dive into seamless payments? Let’s get your business account set up in no time:
 
-1\. Head over to the senangPay Registration page -> [Sign up here ](https://senangpay.my/registration-guide/)
+1\. Head over to the senangPay Registration page -> [Sign up here](https://senangpay.com/registration-guide/)&#x20;
 
 2\. Fill in the blanks—your name, business name, email, phone number, and a rock-solid password.
 
