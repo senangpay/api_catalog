@@ -12,11 +12,9 @@ To get started, please gather the following details from your senangPay Dashboar
 
 Go to **Menu** > **Settings** > **Profile**
 
-1\. **Merchant ID and Secret Key :** Find these in the **Shopping Cart Integration Link** section.
-
-2\. **Return URL** : Specify the Return URL where senangPay will redirect buyers after payment   processing.
-
-3\. **Callback URL :**&#x20;
+1. **Merchant ID and Secret Key :** Find these in the **Shopping Cart Integration Link** section.
+2. **Return URL** : Specify the Return URL where senangPay will redirect buyers after payment   processing.
+3. &#x20;**Callback URL :**&#x20;
 
 * Provide the Callback URL, which serves as an alternative notification method if there is an issue with the transaction flow.
 * For more information on the Callback URL, please [read here ->](https://guide.senangpay.my/callback-url/)
@@ -39,9 +37,8 @@ Below are the details of the elements in the table :
 
 ### Handles 'Return' & 'Callback' from senangPay
 
-1\. The parameters will be send using **GET** method.
-
-2\. The parameters are sent to URL as configured in the [return URL](./#information-required). Refer to the **‘Information Required’** section.
+1. The parameters will be send using **GET** method.
+2. The parameters are sent to URL as configured in the [return URL](./#information-required). Refer to the **‘Information Required’** section.
 
 The table below lists the details of the elements:
 
@@ -53,3 +50,4 @@ The table below lists the details of the elements:
 | transaction\_id | This is the transaction ID used by senangPay. You can use this ID to track the transaction in senangPay. The maximum length is 100 characters. Example 14363538840                                                                                                      |
 | hash            | This is the data to ensure that data integrity has passed from senangPay to the merchant’s shopping cart. Refer to section ‘[How to verify if the secure hash is correct](generate-secure-hash.md#how-to-verify-if-the-secure-hash-is-correct)’ for more info.          |
 
+3. **Callback** : The parameter will be send by **POST** method.
