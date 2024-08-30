@@ -14,6 +14,6 @@ At Senangpay, we offer several types of integration APIs. For more details, plea
 [api-for-recurring-payment](api-for-recurring-payment/)
 {% endcontent-ref %}
 
-{% content-ref url="secure-payments-via-api-tokenization-with-verified-cards/" %}
-[secure-payments-via-api-tokenization-with-verified-cards](secure-payments-via-api-tokenization-with-verified-cards/)
+{% content-ref url="tokenization-api/" %}
+[tokenization-api](tokenization-api/)
 {% endcontent-ref %}

@@ -36,7 +36,7 @@ Additionally, we've implemented several extra security measures to ensure that o
 [3d-get-token.md](3d-get-token.md)
 {% endcontent-ref %}
 
-{% content-ref url="tokenization-api-list.md" %}
-[tokenization-api-list.md](tokenization-api-list.md)
+{% content-ref url="secure-payments-via-api-tokenization-with-verified-cards.md" %}
+[secure-payments-via-api-tokenization-with-verified-cards.md](secure-payments-via-api-tokenization-with-verified-cards.md)
 {% endcontent-ref %}
 
