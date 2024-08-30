@@ -33,8 +33,8 @@ Below are the details of the elements in the table :
 
 
 
-{% swagger src="../../.gitbook/assets/swagger phase 1_update code.yaml" path="/payment/{merchantID}" method="post" %}
-[swagger phase 1_update code.yaml](<../../.gitbook/assets/swagger phase 1_update code.yaml>)
+{% swagger src="../../.gitbook/assets/swagger phase 1- v5.yaml" path="/payment/{merchantID}" method="post" %}
+[swagger phase 1- v5.yaml](<../../.gitbook/assets/swagger phase 1- v5.yaml>)
 {% endswagger %}
 
 ### Handles 'Return' & 'Callback' from senangPay
@@ -54,3 +54,4 @@ The table below lists the details of the elements:
 | hash            | This is the data to ensure that data integrity has passed from senangPay to the merchant’s shopping cart. Refer to section ‘[How to verify if the secure hash is correct](generate-secure-hash.md#how-to-verify-if-the-secure-hash-is-correct)’ for more info.          |
 
 3\. **Callback** : The parameter will be send by **POST** method.
+

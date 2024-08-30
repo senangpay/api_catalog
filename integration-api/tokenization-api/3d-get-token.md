@@ -8,13 +8,9 @@ icon: diamond-half-stroke
 
 3D authentication provides a more secure way of authenticating the ownership of the card holders. When requesting a payment token, card holder need to enter the OTP (one time password) to prove that they are the owner of the card. This will block any use of unauthorized cards for senangPay tokenization.
 
-&#x20;
-
 ## **How does it work?**
 
 **This is not a RESTful API.** The flow of the new Get Token method consists of multiple web views. You can either have an HTML form that will send the required parameters OR you can send as query string parameters (GET). If you are implementing tokenization on a mobile app, you need to implement it in a web view/iframe. We wish to convey our apologies because, at the moment, we are not providing any SDK.
-
-&#x20;
 
 ## **Will senangPay charge card holders for card validation?**
 
@@ -44,9 +40,7 @@ Before anything else, you need to provide the Tokenization Return URL and Callba
 
 **1. 3D Get token (This is not REST)**
 
-| Production URL Endpoint (GET/POST) | https://app.senangpay.my/tokenization/     |
-| ---------------------------------- | ------------------------------------------ |
-| Sandbox URL Endpoint (GET/POST)    | https://sandbox.senangpay.my/tokenization/ |
+<table data-header-hidden data-full-width="false"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Production URL Endpoint (GET/POST)</td><td>https://app.senangpay.my/tokenization/{merchant_id}</td></tr><tr><td>Sandbox URL Endpoint (GET/POST)</td><td>https://sandbox.senangpay.my/tokenization/{merchant_id}</td></tr></tbody></table>
 
 &#x20;
 
@@ -76,8 +70,8 @@ $hash = hash_hmac('sha256', $string_to_hash, $secret_key);
 
 &#x20;
 
-{% swagger src="../../.gitbook/assets/swagger phase 1_update code.yaml" path="/tokenization" method="get" %}
-[swagger phase 1_update code.yaml](<../../.gitbook/assets/swagger phase 1_update code.yaml>)
+{% swagger src="../../.gitbook/assets/swagger phase 1- v5.yaml" path="/tokenization/{merchantID}" method="get" %}
+[swagger phase 1- v5.yaml](<../../.gitbook/assets/swagger phase 1- v5.yaml>)
 {% endswagger %}
 
 

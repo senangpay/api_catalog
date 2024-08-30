@@ -2,7 +2,7 @@
 icon: gear-complex
 ---
 
-# Tokenization API List
+# Secure payments via API Tokenization with verified cards
 
 ### **1.0 Pay credit card using token**
 
@@ -24,7 +24,7 @@ icon: gear-complex
 
 ### **1.2 Request Parameter (All Mandatory)**
 
-<table data-header-hidden><thead><tr><th width="267"></th><th></th></tr></thead><tbody><tr><td><strong>Parameter Name</strong></td><td><strong>Parameter value/description</strong></td></tr><tr><td><a data-footnote-ref href="#user-content-fn-1">name</a></td><td><p>Your customer name. Maximum length is 100.</p><ul><li>Example : Abu Bin Ali</li></ul></td></tr><tr><td>email</td><td><p>Your customer email.</p><ul><li>Example :  ahmad@google.com</li></ul></td></tr><tr><td>detail</td><td><p>Your order detail. Maximum length is 100. </p><ul><li>Example : Order for product id #4</li></ul></td></tr><tr><td>phone</td><td><p>Your customer phone number.</p><ul><li>Example : 0109876543</li></ul></td></tr><tr><td>order_id</td><td><p>Your order id. Can be number or string. Other character is invalid. </p><ul><li>Example : 123</li></ul></td></tr><tr><td>amount</td><td><p>Your order amount in integer format. Convert from decimals as necessary.</p><ul><li>Example : if the amount is RM 2.00, you need to send 200.</li></ul></td></tr><tr><td>token</td><td>Generated token from <a href="3d-get-token.md#integration-method">Get Token API</a></td></tr><tr><td>hash</td><td>A string generated using your secret key (found in your profile settings) with the HMAC SHA256 algorithm. The format is as follows:<br><code>&#x3C;your merchant id>&#x3C;name>&#x3C;email>&#x3C;phone>&#x3C;detail>&#x3C;order_id>&#x3C;amount></code><br>*<em>Note: Do not include the <code>&#x3C; ></code> characters.*</em></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="267"></th><th></th></tr></thead><tbody><tr><td><strong>Parameter Name</strong></td><td><strong>Parameter value/description</strong></td></tr><tr><td>name</td><td><p>Your customer name. Maximum length is 100.</p><ul><li>Example : Abu Bin Ali</li></ul></td></tr><tr><td>email</td><td><p>Your customer email.</p><ul><li>Example :  ahmad@google.com</li></ul></td></tr><tr><td>detail</td><td><p>Your order detail. Maximum length is 100. </p><ul><li>Example : Order for product id #4</li></ul></td></tr><tr><td>phone</td><td><p>Your customer phone number.</p><ul><li>Example : 0109876543</li></ul></td></tr><tr><td>order_id</td><td><p>Your order id. Can be number or string. Other character is invalid. </p><ul><li>Example : 123</li></ul></td></tr><tr><td>amount</td><td><p>Your order amount in integer format. Convert from decimals as necessary.</p><ul><li>Example : if the amount is RM 2.00, you need to send 200.</li></ul></td></tr><tr><td>token</td><td>Generated token from <a href="3d-get-token.md#integration-method">Get Token API</a></td></tr><tr><td>hash</td><td>A string generated using your secret key (found in your profile settings) with the HMAC SHA256 algorithm. The format is as follows:<br><code>&#x3C;your merchant id>&#x3C;name>&#x3C;email>&#x3C;phone>&#x3C;detail>&#x3C;order_id>&#x3C;amount></code><br>*<em>Note: Do not include the <code>&#x3C; ></code> characters.*</em></td></tr></tbody></table>
 
 
 
@@ -48,8 +48,8 @@ icon: gear-complex
 
 
 
-{% swagger src="../../.gitbook/assets/swagger phase 1_update code.yaml" path="/apiv1/pay_cc" method="post" %}
-[swagger phase 1_update code.yaml](<../../.gitbook/assets/swagger phase 1_update code.yaml>)
+{% swagger src="../../.gitbook/assets/swagger phase 1- v5.yaml" path="/apiv1/pay_cc" method="post" %}
+[swagger phase 1- v5.yaml](<../../.gitbook/assets/swagger phase 1- v5.yaml>)
 {% endswagger %}
 
 ###
@@ -88,8 +88,8 @@ icon: gear-complex
 
 
 
-{% swagger src="../../.gitbook/assets/swagger phase 1_update code.yaml" path="/apiv1/update_token_status" method="post" %}
-[swagger phase 1_update code.yaml](<../../.gitbook/assets/swagger phase 1_update code.yaml>)
+{% swagger src="../../.gitbook/assets/swagger phase 1- v5.yaml" path="/apiv1/update_token_status" method="post" %}
+[swagger phase 1- v5.yaml](<../../.gitbook/assets/swagger phase 1- v5.yaml>)
 {% endswagger %}
 
 ###
@@ -123,10 +123,7 @@ icon: gear-complex
 
 
 
-{% swagger src="../../.gitbook/assets/swagger phase 1_update code.yaml" path="/apiv1/validate_token" method="post" %}
-[swagger phase 1_update code.yaml](<../../.gitbook/assets/swagger phase 1_update code.yaml>)
+{% swagger src="../../.gitbook/assets/swagger phase 1- v5.yaml" path="/apiv1/validate_token" method="post" %}
+[swagger phase 1- v5.yaml](<../../.gitbook/assets/swagger phase 1- v5.yaml>)
 {% endswagger %}
 
-
-
-[^1]: 

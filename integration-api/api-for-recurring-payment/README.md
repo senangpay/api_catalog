@@ -44,8 +44,6 @@ Here’s a step-by-step guide:
 
 
 
-
-
 ## **Parameters to send to senangPay**
 
 Below are the details of the elements in the table:
@@ -54,10 +52,8 @@ Below are the details of the elements in the table:
 
 
 
-
-
-{% swagger src="../../.gitbook/assets/swagger phase 1_update code.yaml" path="/recurring/payment/{merchantID}" method="post" %}
-[swagger phase 1_update code.yaml](<../../.gitbook/assets/swagger phase 1_update code.yaml>)
+{% swagger src="../../.gitbook/assets/swagger phase 1- v5.yaml" path="/recurring/payment/{merchantID}" method="post" %}
+[swagger phase 1- v5.yaml](<../../.gitbook/assets/swagger phase 1- v5.yaml>)
 {% endswagger %}
 
 
@@ -78,9 +74,7 @@ Below are the details of the elements in the table:
 | `transaction_id` | <p>senangPay's unique transaction ID. Max 100 characters. </p><ul><li>Example: 14363538840. </li></ul><p>Use it to track transactions in senangPay.</p>                                                            |
 | `hash`           | Ensures data integrity from senangPay to your shopping cart. See the ‘[How to verify the secure hash](generate-secure-hash-recurring-payment.md#how-to-verify-if-the-secure-hash-is-correct)’ section for details. |
 
-
-
-
+3\. **Callback** : The parameter will be send by **POST** method.
 
 \
 \
