@@ -33,8 +33,8 @@ Below are the details of the elements in the table :
 
 
 
-{% swagger src="../../.gitbook/assets/swagger phase 1- v5.yaml" path="/payment/{merchantID}" method="post" %}
-[swagger phase 1- v5.yaml](<../../.gitbook/assets/swagger phase 1- v5.yaml>)
+{% swagger src="../../.gitbook/assets/swagger- endpoint sandbox api.yaml" path="/payment/{merchantID}" method="post" %}
+[swagger- endpoint sandbox api.yaml](<../../.gitbook/assets/swagger- endpoint sandbox api.yaml>)
 {% endswagger %}
 
 ### Handles 'Return' & 'Callback' from senangPay

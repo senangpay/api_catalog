@@ -48,8 +48,8 @@ icon: gear-complex
 
 
 
-{% swagger src="../../.gitbook/assets/swagger phase 1- v5.yaml" path="/apiv1/pay_cc" method="post" %}
-[swagger phase 1- v5.yaml](<../../.gitbook/assets/swagger phase 1- v5.yaml>)
+{% swagger src="../../.gitbook/assets/swagger- endpoint sandbox api.yaml" path="/apiv1/pay_cc" method="post" %}
+[swagger- endpoint sandbox api.yaml](<../../.gitbook/assets/swagger- endpoint sandbox api.yaml>)
 {% endswagger %}
 
 ###
@@ -88,8 +88,8 @@ icon: gear-complex
 
 
 
-{% swagger src="../../.gitbook/assets/swagger phase 1- v5.yaml" path="/apiv1/update_token_status" method="post" %}
-[swagger phase 1- v5.yaml](<../../.gitbook/assets/swagger phase 1- v5.yaml>)
+{% swagger src="../../.gitbook/assets/swagger- endpoint sandbox api.yaml" path="/apiv1/update_token_status" method="post" %}
+[swagger- endpoint sandbox api.yaml](<../../.gitbook/assets/swagger- endpoint sandbox api.yaml>)
 {% endswagger %}
 
 ###
@@ -123,7 +123,7 @@ icon: gear-complex
 
 
 
-{% swagger src="../../.gitbook/assets/swagger phase 1- v5.yaml" path="/apiv1/validate_token" method="post" %}
-[swagger phase 1- v5.yaml](<../../.gitbook/assets/swagger phase 1- v5.yaml>)
+{% swagger src="../../.gitbook/assets/swagger- endpoint sandbox api.yaml" path="/apiv1/validate_token" method="post" %}
+[swagger- endpoint sandbox api.yaml](<../../.gitbook/assets/swagger- endpoint sandbox api.yaml>)
 {% endswagger %}
 

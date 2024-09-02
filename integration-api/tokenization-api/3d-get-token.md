@@ -70,8 +70,8 @@ $hash = hash_hmac('sha256', $string_to_hash, $secret_key);
 
 &#x20;
 
-{% swagger src="../../.gitbook/assets/swagger phase 1- v5.yaml" path="/tokenization/{merchantID}" method="get" %}
-[swagger phase 1- v5.yaml](<../../.gitbook/assets/swagger phase 1- v5.yaml>)
+{% swagger src="../../.gitbook/assets/swagger- endpoint sandbox api.yaml" path="/tokenization/{merchantID}" method="get" %}
+[swagger- endpoint sandbox api.yaml](<../../.gitbook/assets/swagger- endpoint sandbox api.yaml>)
 {% endswagger %}
 
 
