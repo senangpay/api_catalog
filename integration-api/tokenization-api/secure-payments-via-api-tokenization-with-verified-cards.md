@@ -52,6 +52,8 @@ icon: gear-complex
 [swagger- endpoint sandbox api.yaml](<../../.gitbook/assets/swagger- endpoint sandbox api.yaml>)
 {% endswagger %}
 
+<mark style="color:red;">\*\* 'Test it' is available if using Firefox or Safari to test the API</mark>
+
 ###
 
 ### **2.0 Enable/disable credit card**
@@ -92,6 +94,8 @@ icon: gear-complex
 [swagger- endpoint sandbox api.yaml](<../../.gitbook/assets/swagger- endpoint sandbox api.yaml>)
 {% endswagger %}
 
+<mark style="color:red;">\*\* 'Test it' is available if using Firefox or Safari to test the API</mark>
+
 ###
 
 ### **3.0 Validate payment token**
@@ -126,4 +130,6 @@ icon: gear-complex
 {% swagger src="../../.gitbook/assets/swagger- endpoint sandbox api.yaml" path="/apiv1/validate_token" method="post" %}
 [swagger- endpoint sandbox api.yaml](<../../.gitbook/assets/swagger- endpoint sandbox api.yaml>)
 {% endswagger %}
+
+<mark style="color:red;">\*\* 'Test it' is available if using Firefox or Safari to test the API</mark>
 

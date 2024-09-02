@@ -33,9 +33,11 @@ Below are the details of the elements in the table :
 
 
 
-{% swagger src="../../.gitbook/assets/swagger- endpoint sandbox api.yaml" path="/payment/{merchantID}" method="post" %}
-[swagger- endpoint sandbox api.yaml](<../../.gitbook/assets/swagger- endpoint sandbox api.yaml>)
+{% swagger src="../../.gitbook/assets/swagger spelling checked.yaml" path="/payment/{merchantID}" method="post" %}
+[swagger spelling checked.yaml](<../../.gitbook/assets/swagger spelling checked.yaml>)
 {% endswagger %}
+
+<mark style="color:red;">\*\* 'Test it' is available if using Firefox or Safari to test the API</mark>
 
 ### Handles 'Return' & 'Callback' from senangPay
 
