@@ -40,9 +40,7 @@ Before anything else, you need to provide the Tokenization Return URL and Callba
 
 **1. 3D Get token (This is not REST)**
 
-| Production URL Endpoint (GET/POST) | https://app.senangpay.my/tokenization/{merchant\_id} |
-| ---------------------------------- | ---------------------------------------------------- |
-| Sandbox URL Endpoint (GET/POST)    | https://sandbox.senangpay.my/tokenization/           |
+<table data-header-hidden data-full-width="false"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Production URL Endpoint (GET/POST)</td><td>https://app.senangpay.my/tokenization/{merchant_id}</td></tr><tr><td>Sandbox URL Endpoint (GET/POST)</td><td>https://sandbox.senangpay.my/tokenization/{merchant_id}</td></tr></tbody></table>
 
 &#x20;
 
