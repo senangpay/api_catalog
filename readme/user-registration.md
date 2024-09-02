@@ -4,7 +4,7 @@
 
 Ready to dive into seamless payments? Let’s get your business account set up in no time:
 
-1\. Head over to the senangPay Registration page -> [Sign up here](https://senangpay.com/registration-guide/)&#x20;
+1\. Head over to the senangPay Registration page -> [Sign up here](https://register.senangpay.my/)&#x20;
 
 2\. Fill in the blanks—your name, business name, email, phone number, and a rock-solid password.
 
@@ -32,18 +32,7 @@ While your senangPay Business Account handles real transactions in the live envi
 
 4\. On the payment page, select **FPX and choose Maybank** at the Payment Detail section.
 
-
-
-You can use the test credit card below to make payments at our sandbox. Other credit cards will result in a failed credit card transaction.
-
-| Item             | Details          |
-| ---------------- | ---------------- |
-| **Number**       | 5111111111111118 |
-| **Expiry Month** | May              |
-| **Expiry Year**  | 2025             |
-| **CVV**          | 100              |
-
-5. Your senangPay Sandbox Account is now set up. Log in using the credentials you provided to start testing,. Log in here -> [https://sandbox.senangpay.my](https://sandbox.senangpay.my)
+5\. Your senangPay Sandbox Account is now set up. Log in using the credentials you provided to start testing,. Log in here -> [https://register-sandbox.senangpay.my](https://register-sandbox.senangpay.my)&#x20;
 
 
 
