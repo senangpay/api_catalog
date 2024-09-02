@@ -52,8 +52,8 @@ Below are the details of the elements in the table:
 
 
 
-{% swagger src="../../.gitbook/assets/swagger phase 1- v5.yaml" path="/recurring/payment/{merchantID}" method="post" %}
-[swagger phase 1- v5.yaml](<../../.gitbook/assets/swagger phase 1- v5.yaml>)
+{% swagger src="../../.gitbook/assets/swagger- endpoint sandbox api_.yaml" path="/recurring/payment/{merchantID}" method="post" %}
+[swagger- endpoint sandbox api_.yaml](<../../.gitbook/assets/swagger- endpoint sandbox api_.yaml>)
 {% endswagger %}
 
 
