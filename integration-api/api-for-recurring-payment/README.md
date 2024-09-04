@@ -56,7 +56,7 @@ Below are the details of the elements in the table:
 [swagger- endpoint sandbox api_.yaml](<../../.gitbook/assets/swagger- endpoint sandbox api_.yaml>)
 {% endswagger %}
 
-<mark style="color:red;">\*\* 'Test it' is available if using Firefox or Safari to test the API</mark>
+<mark style="color:red;">\*\* The "Test it" option is available when using Firefox or Safari to test the API</mark>
 
 
 

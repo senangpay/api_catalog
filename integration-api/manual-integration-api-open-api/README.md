@@ -37,7 +37,7 @@ Below are the details of the elements in the table :
 [swagger spelling checked.yaml](<../../.gitbook/assets/swagger spelling checked.yaml>)
 {% endswagger %}
 
-<mark style="color:red;">\*\* 'Test it' is available if using Firefox or Safari to test the API</mark>
+<mark style="color:red;">\*\* The "Test it" option is available when using Firefox or Safari to test the API</mark>
 
 ### Handles 'Return' & 'Callback' from senangPay
 
