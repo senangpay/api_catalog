@@ -48,8 +48,8 @@ icon: gear-complex
 
 
 
-{% swagger src="../../.gitbook/assets/swagger- endpoint sandbox api.yaml" path="/apiv1/pay_cc" method="post" %}
-[swagger- endpoint sandbox api.yaml](<../../.gitbook/assets/swagger- endpoint sandbox api.yaml>)
+{% swagger src="../../.gitbook/assets/swagger tokenization_.yaml" path="/apiv1/pay_cc" method="post" %}
+[swagger tokenization_.yaml](<../../.gitbook/assets/swagger tokenization_.yaml>)
 {% endswagger %}
 
 <mark style="color:red;">\*\* The "Test it" option is available when using Firefox or Safari to test the API</mark>
@@ -90,8 +90,8 @@ icon: gear-complex
 
 
 
-{% swagger src="../../.gitbook/assets/swagger- endpoint sandbox api.yaml" path="/apiv1/update_token_status" method="post" %}
-[swagger- endpoint sandbox api.yaml](<../../.gitbook/assets/swagger- endpoint sandbox api.yaml>)
+{% swagger src="../../.gitbook/assets/swagger tokenization_.yaml" path="/apiv1/update_token_status" method="post" %}
+[swagger tokenization_.yaml](<../../.gitbook/assets/swagger tokenization_.yaml>)
 {% endswagger %}
 
 <mark style="color:red;">\*\* The "Test it" option is available when using Firefox or Safari to test the API</mark>
@@ -127,8 +127,8 @@ icon: gear-complex
 
 
 
-{% swagger src="../../.gitbook/assets/swagger- endpoint sandbox api.yaml" path="/apiv1/validate_token" method="post" %}
-[swagger- endpoint sandbox api.yaml](<../../.gitbook/assets/swagger- endpoint sandbox api.yaml>)
+{% swagger src="../../.gitbook/assets/swagger tokenization_.yaml" path="/apiv1/validate_token" method="post" %}
+[swagger tokenization_.yaml](<../../.gitbook/assets/swagger tokenization_.yaml>)
 {% endswagger %}
 
 <mark style="color:red;">\*\* The "Test it" option is available when using Firefox or Safari to test the API</mark>

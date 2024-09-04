@@ -1,0 +1,1402 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: API Integration
+  description: Manual API, Tokenization API and Recurring API integration
+  
+servers:
+  - url: 'https://sandbox.senangpay.my'
+    description: Sandbox
+  - url: 'https://api.sandbox.senangpay.my'
+    description: Sandbox API
+  - url: 'https://app.senangpay.my'
+    description: Production
+
+tags:
+  - name: Manual API
+    description: Payment integration
+  - name: Tokenization API
+    description: Token ID for CC details
+  - name: Recurring API
+    description: Recurring payment - installment or subscription
+
+paths:
+  /payment/{merchantID}:                  
+    post:
+      tags:
+        - Manual API
+      summary: Initiate a new payment with senangPay
+      description: This endpoint creates a payment request to senangPay with the required details.
+      operationId: addPayment
+      parameters:
+        - name: merchantID
+          in: path
+          description: Retrievable in the senangPay Dashboard
+          required: true
+          schema:
+            type: string
+            example: 14222653788472
+      requestBody:
+        required: true
+        content: 
+          application/x-www-form-urlencoded:
+            schema:
+             $ref: '#/components/schemas/ManualAPIRequest'
+      responses:
+        "302":
+          description: Redirects to senangPay's payment page.
+          headers:
+            Location:
+              description: senangPay's payment page URL where the user is redirected.
+              schema:
+                type: string
+                example: "https://sandbox.senangpay.my/payment/..."
+      x-codeSamples:
+        - lang: php
+          label: "PHP"
+          source: |
+            <?php
+
+              $curl = curl_init();
+
+              curl_setopt_array($curl, array(
+                CURLOPT_URL => 'https://sandbox.senangpay.my/payment/{merchantID}',
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS => 'detail=Shopping_cart_id_30&amount=2.00&order_id=ORD12345&hash=c1454b758441c9990404162aa46d812ef55cf3917a57be493493eceeac95aa9f&name=Amir&email=amir%40email.com&phone=123456789',
+                CURLOPT_HTTPHEADER => array(
+                  'Content-Type: application/x-www-form-urlencoded'
+                ),
+              ));
+
+              $response = curl_exec($curl);
+
+              curl_close($curl);
+              echo $response;
+            ?>
+        - lang: javascript
+          label: "JavaScript"
+          source: |
+            const url = 'https://sandbox.senangpay.my/payment/{merchantID}';
+            const data = new URLSearchParams({
+              detail: 'Shopping_cart_id_30',
+              amount: '2.00',
+              order_id: 'ORD12345',
+              hash: 'c1454b758441c9990404162aa46d812ef55cf3917a57be493493eceeac95aa9f',
+              name: 'Amir',
+              email: 'amir@email.com',
+              phone: '123456789'
+            });
+
+            fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Cookie': 'PHPSESSID=uidd02mchmr46k6fc7qsnt0qec'
+              },
+              body: data
+            }).then(() => {
+                // No response handling
+            }).catch(error => console.error('Error:', error));
+        - lang: java
+          label: "Java"
+          source: |
+            import java.io.OutputStream;
+            import java.net.HttpURLConnection;
+            import java.net.URL;
+
+            public class Main {
+                public static void main(String[] args) {
+                    try {
+                        URL url = new URL("https://sandbox.senangpay.my/payment/{merchantID}");
+                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                        conn.setRequestMethod("POST");
+                        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                        conn.setDoOutput(true);
+
+                        String postData = "detail=Shopping_cart_id_30&amount=2.00&order_id=ORD12345&hash=c1454b758441c9990404162aa46d812ef55cf3917a57be493493eceeac95aa9f&name=Amirahtul&email=amir%40email.com&phone=123456789";
+
+                        try (OutputStream os = conn.getOutputStream()) {
+                            byte[] input = postData.getBytes("utf-8");
+                            os.write(input, 0, input.length);
+                        }
+
+                        int responseCode = conn.getResponseCode();
+                        System.out.println("Response Code: " + responseCode);
+
+                        if (responseCode == HttpURLConnection.HTTP_OK) {
+                            try (Scanner scanner = new Scanner(conn.getInputStream())) {
+                                String response = scanner.useDelimiter("\\A").next();
+                                System.out.println(response);
+                            }
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        - lang: curl
+          label: "cURL"
+          source: |
+            curl -X POST 'https://sandbox.senangpay.my/payment/{merchantID}' \
+            -H 'Content-Type: application/x-www-form-urlencoded' \
+            --data-urlencode 'detail=Shopping_cart_id_30' \
+            --data-urlencode 'amount=2.00' \
+            --data-urlencode 'order_id=ORD12345' \
+            --data-urlencode 'hash=c1454b758441c9990404162aa46d812ef55cf3917a57be493493eceeac95aa9f' \
+            --data-urlencode 'name=Ami' \
+            --data-urlencode 'email=amir@email.com' \
+            --data-urlencode 'phone=123456789'
+        - lang: Node.js
+          label: "Node.js"
+          source: |
+            const https = require('https');
+            const querystring = require('querystring');
+
+            const postData = querystring.stringify({
+              detail: 'Shopping_cart_id_30',
+              amount: '2.00',
+              order_id: 'ORD12345',
+              hash: 'c1454b758441c9990404162aa46d812ef55cf3917a57be493493eceeac95aa9f',
+              name: 'Amir',
+              email: 'amir@email.com',
+              phone: '123456789'
+            });
+
+            const options = {
+              hostname: 'sandbox.senangpay.my',
+              path: '/payment/{merchantID}',
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Length': postData.length
+              }
+            };
+
+            const req = https.request(options, (res) => {
+              let data = '';
+
+              res.on('data', (chunk) => {
+                data += chunk;
+              });
+
+              res.on('end', () => {
+                console.log('Response:', data);
+              });
+            });
+
+            req.on('error', (e) => {
+              console.error('Request error:', e);
+            });
+
+            req.write(postData);
+            req.end();
+
+  /<merchant return URL>:
+    get:
+      tags:
+        - Manual API
+      summary: Handle post-payment redirect from senangPay
+      description: This endpoint handles the return from senangPay after a payment attempt. It can be your receipt or order status page.
+  
+  /<merchant callback URL>:
+    post:
+      tags:
+        - Manual API
+      summary: Handle callback from senangPay
+      description: This endpoint receives callbacks from senangPay with the payment result.
+
+  /tokenization/{merchantID}:
+    get:
+      tags:
+        - Tokenization API
+      summary: Get token API (3D Token)
+      description: Use this endpoint to send tokenization request.
+      parameters:
+        - name: merchantID
+          in: path
+          description: Retrievable in the senangPay Dashboard
+          required: true
+          schema:
+            type: string
+            example: 14222653788472
+        - in: query
+          name: order_id
+          schema:
+            type: string
+          required: true
+          description: Merchant unique order ID for each tokenization request.
+        - in: query
+          name: name
+          schema:
+            type: string
+          required: true
+          description: Customer's name. Max length 100.
+        - in: query
+          name: email
+          schema:
+            type: string
+          required: true
+          description: Customer's email address.
+        - in: query
+          name: phone
+          schema:
+            type: string
+          required: true
+          description: Customer's phone number.
+        - in: query
+          name: hash
+          schema:
+            type: string
+          required: true
+          description: Hash generated using HMAC SHA256. Construct the hash as follows <br/><br/>
+                      hash_hmac(‘SHA256’, {merchant_id}{order_id}, {merchant_secret_key})
+      responses:
+        "302":
+          description: Redirects to senangPay's payment page.
+          headers:
+            Location:
+              description: senangPay's payment page URL where the user is redirected.
+              schema:
+                type: string
+                example: "https://sandbox.senangpay.my/payment/..."
+      x-codeSamples:
+        - lang: PHP
+          label: "PHP"
+          source: |
+            <?php
+
+              $url = "https://sandbox.senangpay.my/tokenization/{merchantID}";
+
+              // Prepare the data as query parameters
+              $data = [
+                  "order_id" => "ORD12345",
+                  "name" => "Amir",
+                  "email" => "amir@email.com",
+                  "phone" => 123456789,
+                  "hash" => "a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeed"
+              ];
+
+              // Initialize cURL session
+              $ch = curl_init();
+
+              // Set the URL with query parameters
+              curl_setopt($ch, CURLOPT_URL, $url . '?' . http_build_query($data));
+              curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+              // Execute the GET request
+              $response = curl_exec($ch);
+
+              // Close cURL session
+              curl_close($ch);
+
+              // Output the response (for debugging purposes)
+              echo $response;
+            ?>
+        - lang: javascript
+          label: "JavaScript"
+          source: |
+            const url = 'https://sandbox.senangpay.my/tokenization/{merchantID}';
+
+            const params = new URLSearchParams({
+                order_id: 'ORD12345',
+                name: 'Amir',
+                email: 'amir@email.com',
+                phone: 123456789,
+                hash: 'a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeed'
+            });
+
+            // Make a GET request using fetch
+            fetch(`${url}?${params.toString()}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data); // Output the response (for debugging purposes)
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        - lang: Java
+          label: "Java"
+          source: |
+            import java.io.BufferedReader;
+            import java.io.InputStreamReader;
+            import java.net.HttpURLConnection;
+            import java.net.URL;
+            import java.net.URLEncoder;
+            import java.nio.charset.StandardCharsets;
+
+            public class Main {
+                public static void main(String[] args) {
+                    try {
+                        // Base URL
+                        String url = "https://sandbox.senangpay.my/tokenization/{merchantID}";
+                        
+                        // Parameters
+                        String params = "order_id=" + URLEncoder.encode("ORD12345", StandardCharsets.UTF_8.name()) +
+                                        "&name=" + URLEncoder.encode("Amir", StandardCharsets.UTF_8.name()) +
+                                        "&email=" + URLEncoder.encode("amir@email.com", StandardCharsets.UTF_8.name()) +
+                                        "&phone=" + URLEncoder.encode("123456789", StandardCharsets.UTF_8.name()) +
+                                        "&hash=" + URLEncoder.encode("a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeed", StandardCharsets.UTF_8.name());
+
+                        // Complete URL with parameters
+                        URL fullUrl = new URL(url + "?" + params);
+
+                        // Open a connection to the URL
+                        HttpURLConnection conn = (HttpURLConnection) fullUrl.openConnection();
+                        conn.setRequestMethod("GET");
+
+                        // Get the response code
+                        int responseCode = conn.getResponseCode();
+                        System.out.println("Response Code: " + responseCode);
+
+                        // If the response is successful, read and print the response
+                        if (responseCode == HttpURLConnection.HTTP_OK) {
+                            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                            String inputLine;
+                            StringBuilder response = new StringBuilder();
+
+                            while ((inputLine = in.readLine()) != null) {
+                                response.append(inputLine);
+                            }
+                            in.close();
+
+                            // Output the response (for debugging purposes)
+                            System.out.println(response.toString());
+                        } else {
+                            System.out.println("GET request failed");
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        - lang: cURL
+          label: "cURL"
+          source: |
+            curl -G https://sandbox.senangpay.my/tokenization/{merchantID} \
+            -d "order_id=ORD12345" \
+            -d "name=Amir" \
+            -d "email=amir@email.com" \
+            -d "phone=123456789" \
+            -d "hash=a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeed" 
+        - lang: Node.js
+          label: "Node.js"
+          source: |
+            const https = require('https');
+            const querystring = require('querystring');
+
+            // Base URL
+            const url = 'https://sandbox.senangpay.my/tokenization/{merchantID}';
+
+            // Parameters
+            const params = querystring.stringify({
+                order_id: 'ORD12345',
+                name: 'Amir',
+                email: 'amir@email.com',
+                phone: '123456789',
+                hash: 'a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeed'
+            });
+
+            // Complete URL with query parameters
+            const fullUrl = `${url}?${params}`;
+
+            // Make a GET request using https module
+            https.get(fullUrl, (resp) => {
+                let data = '';
+
+                // A chunk of data has been received.
+                resp.on('data', (chunk) => {
+                    data += chunk;
+                });
+
+                // The whole response has been received. Print out the result.
+                resp.on('end', () => {
+                    console.log(JSON.parse(data)); // Output the response (for debugging purposes)
+                });
+
+            }).on("error", (err) => {
+                console.log("Error: " + err.message);
+            });
+          
+  /apiv1/pay_cc:                
+    post:
+      tags:
+        - Tokenization API
+      summary: Charge credit card using token
+      security:
+        - basicAuth: []
+      description: Charge credit card using token
+      operationId: getCCDetail
+      requestBody:
+        required: true
+        content: 
+          application/x-www-form-urlencoded:
+            schema:
+             $ref: '#/components/schemas/ChargeCCUsingToken'
+
+      responses:
+        "200":
+          description: Charge credit card using token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayTokenResponse'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/UnauthorizedError'
+      x-codeSamples:
+        - lang: php
+          label: "PHP"
+          source: |
+            <?php
+              $curl = curl_init();
+
+              curl_setopt_array($curl, array(
+                  CURLOPT_URL => 'https://sandbox.senangpay.my/apiv1/pay_cc',
+                  CURLOPT_RETURNTRANSFER => true,
+                  CURLOPT_ENCODING => '',
+                  CURLOPT_MAXREDIRS => 10,
+                  CURLOPT_TIMEOUT => 0,
+                  CURLOPT_FOLLOWLOCATION => true,
+                  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                  CURLOPT_CUSTOMREQUEST => 'POST',
+                  CURLOPT_POSTFIELDS => http_build_query(array(
+                      'name' => 'amir',
+                      'email' => 'amir@email',
+                      'detail' => 'test',
+                      'phone' => '123456789',
+                      'order_id' => '123',
+                      'amount' => '200',
+                      'token' => '55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230',
+                      'hash' => '7eec18b9fe609ef5eea650d5aea9bb0a96ae7c83b101a872012dc9d5c07273b3'
+                  )),
+                  CURLOPT_HTTPHEADER => array(
+                      'Content-Type: application/x-www-form-urlencoded',
+                      'Authorization: Basic <token>'
+                  ),
+              ));
+
+              $response = curl_exec($curl);
+
+              curl_close($curl);
+              echo $response;
+            ?>
+        - lang: javascript
+          label: "JavaScript"
+          source: |
+            fetch('https://sandbox.senangpay.my/apiv1/pay_cc', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization: 'Basic <token>'
+                },
+                body: new URLSearchParams({
+                    name: 'amir',
+                    email: 'amir@email',
+                    detail: 'test',
+                    phone: '123456789',
+                    order_id: '123',
+                    amount: '200',
+                    token: '55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230',
+                    hash: '7eec18b9fe609ef5eea650d5aea9bb0a96ae7c83b101a872012dc9d5c07273b3'
+                })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        - lang: java
+          label: "Java"
+          source: |
+            import java.io.OutputStream;
+            import java.net.HttpURLConnection;
+            import java.net.URL;
+            import java.net.URLEncoder;
+            import java.nio.charset.StandardCharsets;
+
+            public class Main {
+                public static void main(String[] args) {
+                    try {
+                        URL url = new URL("https://sandbox.senangpay.my/apiv1/pay_cc");
+                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                        conn.setRequestMethod("POST");
+                        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                        conn.setRequestProperty("Authorization", "Basic <token>");
+                        conn.setDoOutput(true);
+
+                        String data = "name=" + URLEncoder.encode("amir", "UTF-8") +
+                                "&email=" + URLEncoder.encode("amir@email", "UTF-8") +
+                                "&detail=" + URLEncoder.encode("test", "UTF-8") +
+                                "&phone=" + URLEncoder.encode("123456789", "UTF-8") +
+                                "&order_id=" + URLEncoder.encode("123", "UTF-8") +
+                                "&amount=" + URLEncoder.encode("200", "UTF-8") +
+                                "&token=" + URLEncoder.encode("55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230", "UTF-8") +
+                                "&hash=" + URLEncoder.encode("7eec18b9fe609ef5eea650d5aea9bb0a96ae7c83b101a872012dc9d5c07273b3", "UTF-8");
+
+                        try (OutputStream os = conn.getOutputStream()) {
+                            byte[] input = data.getBytes(StandardCharsets.UTF_8);
+                            os.write(input, 0, input.length);
+                        }
+
+                        int responseCode = conn.getResponseCode();
+                        System.out.println("Response Code: " + responseCode);
+
+                        // Read the response (omitted here, but typically you'd use InputStreamReader)
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        - lang: curl
+          label: "cURL"
+          source: |
+            curl --location 'https://sandbox.senangpay.my/apiv1/pay_cc' \
+            --header 'Content-Type: application/x-www-form-urlencoded' \
+            --header 'Authorization: Basic <token>' \
+            --data-urlencode 'name=amir' \
+            --data-urlencode 'email=amir@email.com' \
+            --data-urlencode 'detail=test' \
+            --data-urlencode 'phone=12345678' \
+            --data-urlencode 'order_id=123' \
+            --data-urlencode 'amount=200' \
+            --data-urlencode 'token=55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230' \
+            --data-urlencode 'hash=7eec18b9fe609ef5eea650d5aea9bb0a96ae7c83b101a872012dc9d5c07273b3'
+        - lang: node.js
+          label: "Node.js"
+          source: |
+            const https = require('https');
+            const querystring = require('querystring');
+
+            const postData = querystring.stringify({
+                name: 'amir',
+                email: 'amir@email',
+                detail: 'test',
+                phone: '123456789',
+                order_id: '123',
+                amount: '200',
+                token: '55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230',
+                hash: '7eec18b9fe609ef5eea650d5aea9bb0a96ae7c83b101a872012dc9d5c07273b3'
+            });
+
+            const options = {
+                hostname: 'sandbox.senangpay.my',
+                port: 443,
+                path: '/apiv1/pay_cc',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': 'Basic <token>',
+                    'Content-Length': Buffer.byteLength(postData)
+                }
+            };
+
+            const req = https.request(options, (res) => {
+                let data = '';
+
+                res.on('data', (chunk) => {
+                    data += chunk;
+                });
+
+                res.on('end', () => {
+                    console.log('Response:', data);
+                });
+            });
+
+            req.on('error', (e) => {
+                console.error('Error:', e.message);
+            });
+
+            // Write data to request body
+            req.write(postData);
+            req.end();
+
+  /apiv1/update_token_status:
+    post:
+      tags:
+        - Tokenization API
+      summary: Enable / disable Credit Cards
+      description: Enable or disable Credit Card by token
+      security:
+        - basicAuth: []
+      operationId: enableDisableCCToken
+      requestBody:
+        required: true
+        content: 
+          application/x-www-form-urlencoded:
+            schema:
+             $ref: '#/components/schemas/EnableDisableCC'
+
+      responses:
+        "200":
+          description: Response update token status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EnableDisableCCResponse'
+
+      x-codeSamples:
+        - lang: php
+          label: "PHP"
+          source: |
+            <?php
+              $curl = curl_init();
+
+              curl_setopt_array($curl, array(
+                  CURLOPT_URL => 'https://sandbox.senangpay.my/apiv1/update_token_status',
+                  CURLOPT_RETURNTRANSFER => true,
+                  CURLOPT_ENCODING => '',
+                  CURLOPT_MAXREDIRS => 10,
+                  CURLOPT_TIMEOUT => 0,
+                  CURLOPT_FOLLOWLOCATION => true,
+                  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                  CURLOPT_CUSTOMREQUEST => 'POST',
+                  CURLOPT_POSTFIELDS => http_build_query(array(
+                      'token' => '55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230'
+                  )),
+                  CURLOPT_HTTPHEADER => array(
+                      'Content-Type: application/x-www-form-urlencoded',
+                      'Authorization: Basic <token>'
+                  ),
+              ));
+
+              $response = curl_exec($curl);
+
+              curl_close($curl);
+              echo $response;
+            ?>
+        - lang: javascript
+          label: "JavaScript"
+          source: |
+            fetch('https://sandbox.senangpay.my/apiv1/update_token_status', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization: 'Basic <token>'
+                },
+                body: new URLSearchParams({
+                    token: '55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230'
+                })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        - lang: java
+          label: "Java"
+          source: |
+            import java.io.OutputStream;
+            import java.net.HttpURLConnection;
+            import java.net.URL;
+            import java.net.URLEncoder;
+            import java.nio.charset.StandardCharsets;
+
+            public class Main {
+                public static void main(String[] args) {
+                    try {
+                        URL url = new URL("https://sandbox.senangpay.my/apiv1/update_token_status");
+                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                        conn.setRequestMethod("POST");
+                        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                        conn.setRequestProperty("Authorization", "Basic <token>");
+                        conn.setDoOutput(true);
+
+                        String data = "token=" + URLEncoder.encode("55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230", "UTF-8");
+
+                        try (OutputStream os = conn.getOutputStream()) {
+                            byte[] input = data.getBytes(StandardCharsets.UTF_8);
+                            os.write(input, 0, input.length);
+                        }
+
+                        int responseCode = conn.getResponseCode();
+                        System.out.println("Response Code: " + responseCode);
+
+                        // Read the response (omitted here, but typically you'd use InputStreamReader)
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        - lang: curl
+          label: "cURL"
+          source: |
+            curl --location 'https://sandbox.senangpay.my/apiv1/update_token_status' \
+            --header 'Content-Type: application/x-www-form-urlencoded' \
+            --header 'Authorization: Basic <token>' \
+            --data-urlencode 'token=55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230'
+        - lang: node.js
+          label: "Node.js"
+          source: |
+            const https = require('https');
+            const querystring = require('querystring');
+
+            const postData = querystring.stringify({
+                token: '55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230'
+            });
+
+            const options = {
+                hostname: 'sandbox.senangpay.my',
+                port: 443,
+                path: '/apiv1/update_token_status',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': 'Basic <token>',
+                    'Content-Length': Buffer.byteLength(postData)
+                }
+            };
+
+            const req = https.request(options, (res) => {
+                let data = '';
+
+                res.on('data', (chunk) => {
+                    data += chunk;
+                });
+
+                res.on('end', () => {
+                    console.log('Response:', data);
+                });
+            });
+
+            req.on('error', (e) => {
+                console.error('Error:', e.message);
+            });
+
+            // Write data to request body
+            req.write(postData);
+            req.end();
+
+  /apiv1/validate_token:
+    post:
+      tags:
+        - Tokenization API
+      summary: Check token validity
+      description: Endpoint to validates the supplied token
+      security:
+        - basicAuth: []
+      operationId: validateCCToken
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+             $ref: '#/components/schemas/ValidateCCToken'
+
+      responses:
+        "200":
+          description: Validate token
+          content:
+            application/x-www-form-urlencoded:
+              schema:
+                $ref: '#/components/schemas/ValidateCCTokenResponse'
+      
+      x-codeSamples:
+        - lang: php
+          label: "PHP"
+          source: |
+            <?php
+              $curl = curl_init();
+
+              curl_setopt_array($curl, array(
+                  CURLOPT_URL => 'https://sandbox.senangpay.my/apiv1/validate_token',
+                  CURLOPT_RETURNTRANSFER => true,
+                  CURLOPT_ENCODING => '',
+                  CURLOPT_MAXREDIRS => 10,
+                  CURLOPT_TIMEOUT => 0,
+                  CURLOPT_FOLLOWLOCATION => true,
+                  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                  CURLOPT_CUSTOMREQUEST => 'POST',
+                  CURLOPT_POSTFIELDS => http_build_query(array(
+                      'token' => '55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230'
+                  )),
+                  CURLOPT_HTTPHEADER => array(
+                      'Content-Type: application/x-www-form-urlencoded',
+                      'Authorization: Basic <token>'
+                  ),
+              ));
+
+              $response = curl_exec($curl);
+
+              curl_close($curl);
+              echo $response;
+            ?>
+        - lang: javascript
+          label: "JavaScript"
+          source: |
+            fetch('https://sandbox.senangpay.my/apiv1/validate_token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization: 'Basic <token>'
+                },
+                body: new URLSearchParams({
+                    token: '55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230'
+                })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        - lang: java
+          label: "Java"
+          source: |
+            import java.io.OutputStream;
+            import java.net.HttpURLConnection;
+            import java.net.URL;
+            import java.net.URLEncoder;
+            import java.nio.charset.StandardCharsets;
+
+            public class Main {
+                public static void main(String[] args) {
+                    try {
+                        URL url = new URL("https://sandbox.senangpay.my/apiv1/validate_token");
+                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                        conn.setRequestMethod("POST");
+                        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                        conn.setRequestProperty("Authorization", "Basic <token>");
+                        conn.setDoOutput(true);
+
+                        String data = "token=" + URLEncoder.encode("55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230", "UTF-8");
+
+                        try (OutputStream os = conn.getOutputStream()) {
+                            byte[] input = data.getBytes(StandardCharsets.UTF_8);
+                            os.write(input, 0, input.length);
+                        }
+
+                        int responseCode = conn.getResponseCode();
+                        System.out.println("Response Code: " + responseCode);
+
+                        // Read the response (omitted here, but typically you'd use InputStreamReader)
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        - lang: curl
+          label: "cURL"
+          source: |
+            curl --location 'https://sandbox.senangpay.my/apiv1/validate_token' \
+            --header 'Content-Type: application/x-www-form-urlencoded' \
+            --header 'Authorization: Basic <token>' \
+            --data-urlencode 'token=55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230'
+        - lang: node.js
+          label: "Node.js"
+          source: |
+            const https = require('https');
+            const querystring = require('querystring');
+
+            const postData = querystring.stringify({
+                token: '55200660d03fcd38d179659d487d69d17a98bbf4ee5de4b8bca2269c3b62e230'
+            });
+
+            const options = {
+                hostname: 'sandbox.senangpay.my',
+                port: 443,
+                path: '/apiv1/validate_token',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': 'Basic <token>',
+                    'Content-Length': Buffer.byteLength(postData)
+                }
+            };
+
+            const req = https.request(options, (res) => {
+                let data = '';
+
+                res.on('data', (chunk) => {
+                    data += chunk;
+                });
+
+                res.on('end', () => {
+                    console.log('Response:', data);
+                });
+            });
+
+            req.on('error', (e) => {
+                console.error('Error:', e.message);
+            });
+
+            // Write data to request body
+            req.write(postData);
+            req.end();
+          
+  /recurring/payment/{merchantID}:
+    post:
+      tags:
+        - Recurring API
+      summary: API for recurring payment
+      operationId: recurringAPI
+      parameters:
+        - name: merchantID
+          in: path
+          description: Retrievable from senangPay dashboard
+          required: true
+          schema:
+            type: string
+            example: 14222653788472
+
+      requestBody:
+        required: true
+        content: 
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Recurring'
+      
+      responses:
+        "302":
+          description: Redirects to senangPay's payment page.
+          headers:
+            Location:
+              description: senangPay's payment page URL where the user is redirected.
+              schema:
+                type: string
+                example: "https://sandbox.senangpay.my/payment/..."
+
+      x-codeSamples:
+        - lang: php
+          label: "PHP"
+          source: |
+            <?php
+
+              $curl = curl_init();
+
+              curl_setopt_array($curl, array(
+                CURLOPT_URL => 'https://api.sandbox.senangpay.my/recurring/payment/{merchantID}',
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS => 'order_id=ORD12345&recurring_id=172500523839&hash=7b05df018a4f1235d3b6b18d49ea96abfa6f6b686d56c0b2b664fcb7445bd4d0&name=Amir&email=amir%40email.com&phone=123456789',
+                CURLOPT_HTTPHEADER => array(
+                  'Content-Type: application/x-www-form-urlencoded',
+                ),
+              ));
+
+              $response = curl_exec($curl);
+
+              curl_close($curl);
+            ?>
+        - lang: javascript
+          label: "JavaScript"
+          source: |
+            fetch('https://api.sandbox.senangpay.my/recurring/payment/{merchantID}', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+              body: new URLSearchParams({
+                order_id: 'ORD12345',
+                recurring_id: '172500523839',
+                hash: '7b05df018a4f1235d3b6b18d49ea96abfa6f6b686d56c0b2b664fcb7445bd4d0',
+                name: 'Amir',
+                email: 'amir@email.com',
+                phone: '123456789'
+              })
+            })
+              .then(response => response.text())
+              .then(data => console.log(data))
+              .catch(error => console.error('Error:', error));
+        - lang: java
+          label: "Java"
+          source: |
+            import java.io.BufferedReader;
+            import java.io.InputStreamReader;
+            import java.io.OutputStream;
+            import java.net.HttpURLConnection;
+            import java.net.URL;
+
+            public class HttpPostExample {
+                public static void main(String[] args) {
+                    try {
+                        URL url = new URL("https://api.sandbox.senangpay.my/recurring/payment/{merchantID}");
+                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                        conn.setRequestMethod("POST");
+                        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                        conn.setDoOutput(true);
+
+                        String urlParameters = "order_id=ORD12345&recurring_id=172500523839&hash=7b05df018a4f1235d3b6b18d49ea96abfa6f6b686d56c0b2b664fcb7445bd4d0&name=Amir&email=amir%40email.com&phone=123456789";
+
+                        try (OutputStream os = conn.getOutputStream()) {
+                            os.write(urlParameters.getBytes());
+                            os.flush();
+                        }
+
+                        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                        String inputLine;
+                        StringBuilder response = new StringBuilder();
+
+                        while ((inputLine = in.readLine()) != null) {
+                            response.append(inputLine);
+                        }
+                        in.close();
+
+                        System.out.println(response.toString());
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        - lang: curl
+          label: "cURL"
+          source: |
+            curl -X POST 'https://api.sandbox.senangpay.my/recurring/payment/{merchantID}' \
+            -H 'Content-Type: application/x-www-form-urlencoded' \
+            -d 'order_id=ORD12345&recurring_id=172500523839&hash=7b05df018a4f1235d3b6b18d49ea96abfa6f6b686d56c0b2b664fcb7445bd4d0&name=Amir&email=amir%40email.com&phone=123456789'
+        - lang: node.js
+          label: "Node.js"
+          source: |
+            const https = require('https');
+            const querystring = require('querystring');
+
+            const postData = querystring.stringify({
+              order_id: 'ORD12345',
+              recurring_id: '172500523839',
+              hash: '7b05df018a4f1235d3b6b18d49ea96abfa6f6b686d56c0b2b664fcb7445bd4d0',
+              name: 'Amir',
+              email: 'amir@email.com',
+              phone: '123456789'
+            });
+
+            const options = {
+              hostname: 'api.sandbox.senangpay.my',
+              port: 443,
+              path: '/recurring/payment/153172494354336',
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Length': postData.length,
+                'Cookie': 'PHPSESSID=nj3e14bi98oimtqlsnk0t2d6rg'
+              }
+            };
+
+            const req = https.request(options, res => {
+              let data = '';
+
+              res.on('data', chunk => {
+                data += chunk;
+              });
+
+              res.on('end', () => {
+                console.log(data);
+              });
+            });
+
+            req.on('error', e => {
+              console.error(`Problem with request: ${e.message}`);
+            });
+
+            // Write data to request body
+            req.write(postData);
+            req.end();
+
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+  schemas:
+
+    Payment:
+      description: Model containing payment info
+      properties:
+          detail:
+            type: string
+            example: Shopping cart id 30    
+          amount:
+            type: integer
+            example: 25.50   
+          order id:
+            type: string
+            example: 3432D4     
+          hash:
+            type: string
+            example: a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeedff7728f      
+          name:
+            type: string
+            example: Amir      
+          email:
+            type: string
+            example: amir@email.cm       
+          phone:
+            type: integer
+            example: 0123456789 
+          timeout:
+            type: integer
+            example: 450
+
+    ManualAPIRequest:
+      description: Manual API request parameters.
+      type: object
+      properties:
+        detail:
+          type: string
+          example: Shopping cart id 30   
+        amount:
+          type: number
+          example: 25.50  
+        order_id:
+          type: string
+          description: Unique identifier for the order
+          example: "ORD12345"  
+        hash:
+          type: string
+          example: a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeed    
+        name:
+          type: string
+          example: Amir     
+        email:
+          type: string
+          example: amir@email.com  
+        phone:
+          type: string
+          example: 0123456789
+        timeout:
+          type: integer
+          example: 480
+          description: in seconds
+      required:
+        - detail
+        - amount
+        - order_id
+        - hash
+        - name
+        - email
+        - phone
+        - return_url
+        - callback_url
+
+    GetTokenAPIResponse:
+      description: Response parameters for Get Token API
+      properties:
+        status_id:
+          type: string
+          description: Token creation status (1 for success, 0 for failure)
+          example: "1"
+        order_id:
+          type: string
+          description: Merchant unique order ID for each tokenization request
+          example: "ORD12345"
+        token:
+          type: string
+          description: Card validation.The token will be used for future payments made on the card. If card validation fails, token value will be 0
+          example: "758TX123456KUBG789"
+        cc_num:
+          type: string
+          description: The last four digits of the card. If card validation fails, cc_num value will be 0000
+          example: "XXXXXXXXXXXX1145"
+        cc_type:
+          type: string
+          description: Visa (vs) or Mastercard (mc). When card validation fails, the value is xx
+          example: "vs"
+        msg:
+          type: string
+          description: Card validation status message.
+          example: "Card validate"
+        hash:
+          type: string
+          description: Hash generated to compare against.
+          example: "151bf4a479ed166d6b211528d0a0b452625c8fe83656489c82286fcb975889b5"
+
+    ChargeCCUsingToken:
+      description: Request parameters for payment using tokenization
+      type: object
+      properties:
+          name:
+            type: string
+            example: Abu Bin Ali    
+          email:
+            type: string
+            example: ahmad@google.com    
+          detail:
+            type: string
+            example: Order for product id 4    
+          phone:
+            type: integer
+            example: 0123456789   
+          order_id:
+            type: string
+            example: 3432D4     
+          amount:
+            type: integer
+            example: 25.50       
+          token:
+            type: string
+            description: Generated token from Get Token API
+            example: D12820HJ  
+          hash:
+            type: string
+            description: Hash generated using HMAC SHA256. Construct the hash as follows <br/><br/>
+                      hash_hmac(‘SHA256’, < your merchant id >< name >< email >< phone >< detail >< order_id >< amount >, <merchant_secret_key>) <br/>
+                      without the < > character
+            example: a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeedff7728f
+
+    PayTokenResponse:
+      description: Response parameters for payment using tokenization
+      properties:
+          status:
+            type: integer
+            example: 1  
+            description: Your transaction status. 1 if successful. 0 if failed.
+          transaction_id:
+            type: string
+            example: 15899864888614642
+            description: Unique transaction ID  
+          order_id:
+            type: string
+            example: 3432D4
+          amount_paid:
+            type: integer
+            example: 200
+            description: If the amount transacted is RM 2.00, it will output 200.   
+          msg:
+            type: string
+            example: Payment was successful
+            description: Transaction status message
+          hash:
+            type: string
+            description: Hash generated using HMAC SHA256. Construct the hash as follows <br/><br/>
+                      hash_hmac(‘SHA256’, < your merchant id >< status_id >< order_id >< transaction_id >< amount_paid >< msg >, <merchant_secret_key>) <br/>
+                      without the < > character
+            example: a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeedff7728f
+
+    TokenStatus:
+      description: Model containing cc payment info
+      properties:
+          status:
+            type: integer
+            format: int64
+            example: 1
+          transaction id:
+            type: string
+            example: WSJ30000097DO   
+          order id:
+            type: string
+            example: 3432D5   
+          amount paid:
+            type: integer
+            example: 200   
+          msg:
+            type: string
+            example: Payment was successful    
+          hash:
+            type: string
+            example: a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeedff7728f
+
+    EnableDisableCC:
+      description: Request parameters to enable/disable credit cards using token
+      type: object
+      properties:
+          token:
+            type: string
+            example: 6bcc32c3cf4c6de03f4b3c967a36606d965d54cd51eb6cb7507555e2ad7b4521
+            description: Generated token from Get Token API
+
+    EnableDisableCCResponse:
+      description: Response parameters to enable/disable credit cards using token
+      properties:
+          msg:
+            type: string
+            example: Credit card successfully disabled
+            description: Status message.
+          token:
+            type: string
+            example: 6bcc32c3cf4c6de03f4b3c967a36606d965d54cd51eb6cb7507555e2ad7b4521
+            description: Generated token from Get Token API
+
+    ValidateCCToken:
+      description: Request parameters to validate token
+      type: object
+      properties:
+          token:
+            type: string
+            example: 6bcc32c3cf4c6de03f4b3c967a36606d965d54cd51eb6cb7507555e2ad7b4521
+            description: Generated token from Get Token API
+
+    ValidateCCTokenResponse:
+      description: Response parameters of token validity
+      properties:
+          status:
+            type: integer
+            example: 1
+            description: Token validation status. 1 if success. 0 if failed.
+          msg:
+            type: string
+            example: Card has been successfully verified
+            description: Status message.
+          token:
+            type: string
+            example: 6bcc32c3cf4c6de03f4b3c967a36606d965d54cd51eb6cb7507555e2ad7b4521
+            description: Generated token from Get Token API
+
+    Recurring:
+      description: Request parameters to use recurring API
+      type: object
+      properties:
+          order_id:
+            type: string
+            example: 3432D4  
+            description: Unique Order ID, max length 100.
+          recurring_id:
+            type: string
+            example: 1534997305
+            description: Recurring product/item ID retrievable from senangPay dashboard.
+          hash:
+            type: string
+            example: a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeedff7728f
+          name:
+            type: string
+            example: Abu Bin Ali
+            description: Customer's name.
+          email:
+            type: string
+            example: ahmad@google.com
+            description: Customer's email.
+          phone:
+            type: string
+            example: 0123456789
+            description: Customer's phone number.
+
+    RecurringResponse:
+      description: Response parameters for recurring API
+      properties:
+          status_id:
+            type: integer
+            example: 1  
+            description: Payment status. 1 - Paid, 0 - Failed, 3 - Pending Payment for Recurring Schedule (First time only). 
+          order_id:
+            type: string
+            example: 3432D4
+            description: Your unique order ID
+          msg:
+            type: string
+            example: Payment_was_successful
+            description: Message to describe the payment status.
+          transaction_id:
+            type: string
+            example: 14363538840
+            description: senangPay generated unique transaction ID
+          hash:
+            type: string
+            example: a8167dd09f01ebed0b18e67b2cc2424a0d058ccc83d94803482ecdeedff7728f
+          
+  responses:
+    UnauthorizedError:
+      description: Authentication information is missing or invalid
+      headers:
+        WWW_Authenticate:
+          schema:
+            type: string

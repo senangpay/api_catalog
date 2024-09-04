@@ -70,8 +70,8 @@ $hash = hash_hmac('sha256', $string_to_hash, $secret_key);
 
 &#x20;
 
-{% swagger src="../../.gitbook/assets/swagger spelling checked.yaml" path="/tokenization/{merchantID}" method="get" %}
-[swagger spelling checked.yaml](<../../.gitbook/assets/swagger spelling checked.yaml>)
+{% swagger src="../../.gitbook/assets/swagger tokenization_.yaml" path="/tokenization/{merchantID}" method="get" %}
+[swagger tokenization_.yaml](<../../.gitbook/assets/swagger tokenization_.yaml>)
 {% endswagger %}
 
 <mark style="color:red;">\*\* The "Test it" option is available when using Firefox or Safari to test the API</mark>
