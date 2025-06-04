@@ -1,12 +1,12 @@
 # Table of contents
 
-* [Getting started with senangPay API](README.md)
-  * [User Registration](readme/user-registration.md)
+* [Get started with senangPay API.](README.md)
+  * [User registration](readme/user-registration.md)
 * [Integration API](integration-api/README.md)
   * [Manual Integration API (Open API)](integration-api/manual-integration-api-open-api/README.md)
     * [Generate Secure Hash](integration-api/manual-integration-api-open-api/generate-secure-hash.md)
   * [API for Recurring Payment](integration-api/api-for-recurring-payment/README.md)
     * [Generate Secure Hash - Recurring Payment](integration-api/api-for-recurring-payment/generate-secure-hash-recurring-payment.md)
-  * [Tokenization API](integration-api/tokenization-api/README.md)
-    * [3D Get Token](integration-api/tokenization-api/3d-get-token.md)
-    * [Secure payments via API Tokenization with verified cards](integration-api/tokenization-api/secure-payments-via-api-tokenization-with-verified-cards.md)
+  * [Tokenisation API](integration-api/tokenisation-api/README.md)
+    * [3D Get Token](integration-api/tokenisation-api/3d-get-token.md)
+    * [Secure payments via Tokenisation API with verified cards](integration-api/tokenisation-api/secure-payments-via-tokenisation-api-with-verified-cards.md)
